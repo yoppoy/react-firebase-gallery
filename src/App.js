@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FirebaseUpload from "./components/firebaseUpload";
+import FirebaseUpload from "./components/FirebaseUpload";
 
 class App extends Component {
     render() {

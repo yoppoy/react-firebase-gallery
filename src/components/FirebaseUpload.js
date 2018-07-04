@@ -47,7 +47,8 @@ class FirebaseUpload extends Component {
 import React, {Component} from 'react';
 import firebaseApp from "../config/firebase";
 import FileUploader from 'react-firebase-file-uploader';
-import readFiles from '../services/tools/ReadFiles';
+import compressImage from '../services/tools/ImageCompression';
+import Preview from './Preview';
 import {Modal, Button} from 'react-materialize';
 import 'materialize-css';
 import '../styles/flexImagelayout.css';
@@ -57,8 +58,6 @@ var storageRef = firebaseApp.storage().ref();
 
 class FirebaseUpload extends Component {
     state = {
-        username: '',
-        avatar: '',
         isUploading: false,
         progress: 0,
         files: []
@@ -79,8 +78,37 @@ class FirebaseUpload extends Component {
         console.log("uploaded : " + filename);
     };
 
+    readFiles = (files, index = 0) => {
+        let reader;
+        let pos;
+        let updatedFiles;
+
+        if (index >= files.length)
+            return;
+        pos = this.state.files.length;
+        this.setState(prevState => ({
+                files: [...prevState.files, {
+                    preview: null,
+                    post: files[index]
+                }]
+            }),
+            () => {
+                window.loadImage(
+                    files[index],
+                    (img) => {
+                        updatedFiles = this.state.files.slice();
+                        updatedFiles[pos].preview = img.src;
+                        updatedFiles[pos].post = files[index];
+                        this.setState({files: updatedFiles}, () =>
+                            this.readFiles(files, index + 1));
+                    },
+                    {maxWidth: 300} // Options
+                );
+            });
+    };
+
     handleChange = (event) => {
-        readFiles([...event.target.files]);
+        this.readFiles([...event.target.files]);
     };
 
     uploadToFirebase = () => {
@@ -92,11 +120,11 @@ class FirebaseUpload extends Component {
         });
     };
 
-    renderTarget = (height) => {
+    renderPreview = (height) => {
         const {files} = this.state;
         const generated = _.map(files, (value, key) => {
             return (
-                <img src={value.preview} key={key}/>
+                <Preview file={value} key={key}/>
             )
         });
         return (generated);
@@ -129,9 +157,9 @@ class FirebaseUpload extends Component {
                                 multiple required
                             />
                             <div className='imageGrid'>
-                                {this.renderTarget(100)}
+                                {this.renderPreview(100)}
                             </div>
-                            <Button onClick={this.uploadToFirebase()}>Upload</Button>
+                            <Button onClick={this.uploadToFirebase}>Upload</Button>
                         </div>
                     </Modal>
                 </form>
