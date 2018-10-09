@@ -7,7 +7,7 @@ class Preview extends Component {
         return (
             <div>
                 {this.props.file.preview ?
-                    <img src={this.props.file.preview}/> :
+                    <img height={100} src={this.props.file.preview}/> :
                     <p><i className="material-icons">
                         image
                     </i></p>

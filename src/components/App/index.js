@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import FirebaseUpload from "./components/FirebaseUpload";
+import UploadDialog from '../../views/Upload/dialog';
 
-class App extends Component {
+
+class Index extends Component {
     render() {
         return (
             <div className="container">
-                <FirebaseUpload />
+                <UploadDialog/>
             </div>
         );
     }
 }
 
-export default App;
+export default Index;
