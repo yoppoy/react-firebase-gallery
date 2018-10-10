@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import FileUploader from 'react-firebase-file-uploader';
 import idGenerator from 'react-id-generator';
 import firebaseApp from "../../config/firebase/index";
-import UploadDialog from "./views/dialog"
+import UploadDialog from "./views/dialog";
+import pica from 'pica';
 
 var storageRef = firebaseApp.storage().ref();
 
@@ -33,23 +34,8 @@ class Upload extends Component {
         //storageRef.child("galleries").child('28e6a980-f440-491e-8937-4c60aef97468.jpg').delete().then(() => console.log("hello"));
         console.log("uploaded : " + filename);
     };
-
-    readFile = (file, id) => {
-        let files;
-        let reader;
-
-        reader = new FileReader();
-        console.log("-> " + id);
-        reader.onload = (e) => {
-            console.log("-> + " + id);
-            files = {...this.state.files};
-            files[id].img = e.target.result;
-            this.setState({files});
-        };
-        reader.readAsDataURL(file);
-    };
-
-    readFiles = (newFiles, index = 0, reader) => {
+    
+    addFiles = (newFiles, index = 0, reader) => {
         let updatedFiles;
         let files;
         let newId = idGenerator();
@@ -71,18 +57,24 @@ class Upload extends Component {
         this.setState({files}, () => {
             files = {...this.state.files};
             files[newId].img = URL.createObjectURL(newFiles[index]);
+            /*const resizedCanvas = document.createElement('canvas')
+            resizedCanvas.height = 500
+            resizedCanvas.width = 500;
+
+            pica().resize(files[newId].img , resizedCanvas, {
+                unsharpAmount: 80,
+                unsharpRadius: 0.6,
+                unsharpThreshold: 2
+            }).then(result => console.log(`resize done!  ${result}`))
+                .catch(err => console.log(err))*/
             this.setState({files}, () => {
-                this.readFiles(newFiles, index + 1)
+                this.addFiles(newFiles, index + 1)
             });
         });
-        /*this.readFile(newFiles[index], newId);
-        this.setState({files}, () => {
-            this.readFiles(newFiles, index + 1)
-        });*/
     };
 
     handleChange = (event) => {
-        this.readFiles([...event.target.files]);
+        this.addFiles([...event.target.files]);
     };
 
     upload = () => {
@@ -127,8 +119,9 @@ class Upload extends Component {
                 <UploadDialog galleryData={this.state.gallery}
                               files={this.state.files}
                               functions={{
-                                  upload: this.upload,
-                                  removeFile: this.removeFile
+                                  addFiles: this.addFiles,
+                                  removeFile: this.removeFile,
+                                  upload: this.upload
                               }}/>
             </div>
         );

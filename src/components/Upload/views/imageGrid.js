@@ -14,8 +14,7 @@ const styles = theme => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        overflow: 'hidden',
-        backgroundColor: theme.palette.background.paper,
+        overflow: 'hidden'
     },
     icon: {
         color: 'rgba(255, 255, 255, 0.8)',
