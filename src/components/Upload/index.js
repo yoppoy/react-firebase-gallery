@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import FileUploader from 'react-firebase-file-uploader';
-import Preview from './Preview';
-import Button from '@material-ui/core/Button';
-import _ from "lodash";
 import idGenerator from 'react-id-generator';
 import firebaseApp from "../../config/firebase/index";
-import PhotoGridList from "../../views/Upload/PhotoGridList";
+import UploadDialog from "./views/dialog"
 
 var storageRef = firebaseApp.storage().ref();
 
@@ -13,7 +10,7 @@ class Upload extends Component {
     state = {
         isUploading: false,
         progress: 0,
-        gallery: {
+        galleryData: {
             name: "New gallery",
             location: "",
             tags: []
@@ -67,14 +64,13 @@ class Upload extends Component {
             date: newFiles[index].lastModifiedDate.getDate(),
             file: newFiles[index],
             state: {
-                uploading: false,
+                loading: false,
                 uploaded: true
             }
         };
         this.setState({files}, () => {
             files = {...this.state.files};
             files[newId].img = URL.createObjectURL(newFiles[index]);
-            console.log(files[newId].img);
             this.setState({files}, () => {
                 this.readFiles(newFiles, index + 1)
             });
@@ -85,15 +81,11 @@ class Upload extends Component {
         });*/
     };
 
-    removeFile = (id) => {
-        console.log("Removing " + id);
-    };
-
     handleChange = (event) => {
         this.readFiles([...event.target.files]);
     };
 
-    uploadToFirebase = () => {
+    upload = () => {
         const {files} = this.state;
 
         Object.keys(files).map(key => (
@@ -101,34 +93,53 @@ class Upload extends Component {
         ));
     };
 
+    removeFile = (id) => {
+        let files = {...this.state.files};
+
+        if (files[id]) {
+            URL.revokeObjectURL(files[id].img);
+            files[id] = undefined;
+            this.setState({files});
+            console.log(this.state.files);
+        }
+    };
+
     render() {
         return (
             <div>
-                <form>
-                    <div>
-                        <FileUploader
-                            accept="image/*"
-                            name="uploader"
-                            storageRef={storageRef.child("galleries")}
-                            onUploadStart={this.handleUploadStart}
-                            onUploadError={this.handleUploadError}
-                            onUploadSuccess={this.handleUploadSuccess}
-                            onProgress={this.handleProgress}
-                            onChange={this.handleChange}
-                            ref={instance => {
-                                this.fileUploader = instance;
-                            }}
-                            multiple required
-                        />
-                        <div>
-                            <PhotoGridList tileData={this.state.files} removeItem={this.removeFile}/>
-                        </div>
-                        <Button onClick={this.uploadToFirebase}>Upload</Button>
-                    </div>
-                </form>
+                <FileUploader
+                    hidden
+                    id="uploader"
+                    name="uploader"
+                    accept="image/*"
+                    storageRef={storageRef.child("galleries")}
+                    onUploadStart={this.handleUploadStart}
+                    onUploadError={this.handleUploadError}
+                    onUploadSuccess={this.handleUploadSuccess}
+                    onProgress={this.handleProgress}
+                    onChange={this.handleChange}
+                    ref={instance => {
+                        this.fileUploader = instance;
+                    }}
+                    multiple
+                    required
+                />
+                <UploadDialog galleryData={this.state.gallery}
+                              files={this.state.files}
+                              functions={{
+                                  upload: this.upload,
+                                  removeFile: this.removeFile
+                              }}/>
             </div>
         );
     }
 }
 
+/*
+*                 <div>
+                    <PhotoGridList tileData={this.state.files} removeItem={this.removeFile}/>
+                </div>
+                <Button onClick={this.uploadToFirebase}>Upload</Button>
+
+* */
 export default Upload;

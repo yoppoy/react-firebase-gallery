@@ -20,8 +20,8 @@ export default class Image extends React.Component<Props, State> {
         }
         const originalWidth = target instanceof HTMLImageElement ? target.naturalWidth : 0;
         const originalHeight = target instanceof HTMLImageElement ? target.naturalHeight : 0;
-        const widthRatio = (this.props.width == undefined ? 1 : this.props.width) / originalWidth;
-        const heightRatio = (this.props.height == undefined ? 1 : this.props.height) / originalHeight;
+        const widthRatio = (this.props.width === undefined ? 1 : this.props.width) / originalWidth;
+        const heightRatio = (this.props.height === undefined ? 1 : this.props.height) / originalHeight;
         if (widthRatio < heightRatio) {
             this.setState({
                 width: originalWidth * widthRatio,
@@ -33,35 +33,39 @@ export default class Image extends React.Component<Props, State> {
                 height: originalHeight * heightRatio,
             });
         }
-    }
+    };
 
     showNoImage = () => {
-        if (this.props.noImageSrc == undefined) {
+        if (this.props.noImageSrc === undefined) {
             return;
         }
         this.setState({
             isNoImage: true,
         });
-    }
+    };
 
     render() {
         const style = {
-            wrapper: {
-                position: 'relative',
-                width: this.props.width,
-                height: this.props.height,
-                backgroundColor: this.props.backgroundColor,
-            },
-            image: {
-                position: 'absolute',
-                display: 'block',
-                left: (this.props.width - this.state.width) / 2,
-                top: (this.props.height - this.state.height) / 2,
-                width: this.state.width,
-                height: this.state.height,
-                minHeight: '100%'
-            },
-        };
+                wrapper: {
+                    position: 'relative',
+                    width: this.props.width,
+                    height: this.props.height,
+                    minWidth: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    overflow: 'hidden'
+                },
+                image: {
+                    position: 'absolute',
+                    display: 'block',
+                    flexShrink: 0,
+                    minWidth: '100%',
+                    minHeight: '100%',
+                    maxWidth: '100%'
+                },
+            }
+        ;
         const wrapperStyle = this.props.style ? m(this.props.style, style.wrapper) : style.wrapper;
         if (this.state.isNoImage) {
             return (

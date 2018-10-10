@@ -1,0 +1,11 @@
+#createNewGallery #imageGrid .imageTile {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#createNewGallery #imageGrid {
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}

@@ -2,33 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731f0787-94ac-4e75-af0b-4b3fcc1dda7c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Upload/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/image-resizer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/image-resizer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/image-resizer/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Upload/PhotoGridList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Upload/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/interface.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/JavaScript-Load-Image" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/workers/RenderImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FirebaseUpload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/Preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/firebase/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/keys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/tools/ImageCompression.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/flexImagelayout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tmp/FirebaseUpload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tmp/Preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/image-resizer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/image-resizer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Upload/PhotoGridList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Upload/dialog.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,40 +33,45 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="css" value="1" />
           <entry key="env" value="1" />
           <entry key="html" value="1" />
-          <entry key="js" value="20" />
+          <entry key="js" value="30" />
           <entry key="json" value="1" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="1" />
           <entry key="HTML" value="1" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="20" />
+          <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="57" />
           <entry key="env" value="31" />
           <entry key="html" value="17" />
-          <entry key="js" value="2900" />
+          <entry key="js" value="5888" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="57" />
           <entry key="HTML" value="17" />
-          <entry key="JavaScript" value="2900" />
+          <entry key="JavaScript" value="5888" />
           <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
@@ -88,10 +80,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/Upload/dialog.js">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -100,10 +92,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/Upload/PhotoGridList.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/dialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+            <state relative-caret-position="332">
+              <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -112,22 +104,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lib/image-resizer/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/interface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+            <state relative-caret-position="510">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
-                <element signature="e#9#35#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/galleryForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state relative-caret-position="391">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="36" selection-start-column="36" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -135,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+            <state relative-caret-position="306">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -145,12 +149,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/imageGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="680">
+              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,44 +165,44 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
-      <find>jimp</find>
-      <find>image-compre</find>
-      <find>compressI</find>
-      <find>materiali</find>
-      <find>render</find>
-      <find>dotenv</find>
-      <find>worker</find>
-      <find>startUp</find>
-      <find>post</find>
-      <find>.post</find>
-      <find>progress</find>
-      <find>AlertDialogSlide</find>
-      <find>TitlebarGridList</find>
-      <find>FirebaseUpload</find>
-      <find>tile.img</find>
-      <find>preview</find>
-      <find>GridList</find>
-      <find>Typoogra</find>
-      <find>sli</find>
-      <find>ti</find>
-      <find>Decem</find>
-      <find>files</find>
-      <find>tileData</find>
-      <find>deleteItem</find>
       <find>genera</find>
       <find>cre</find>
       <find>src</find>
-      <find>.src</find>
       <find>createO</find>
+      <find>.src</find>
+      <find>uploading</find>
+      <find>Image</find>
+      <find>consol</find>
+      <find>console</find>
+      <find>.files</find>
+      <find>.upload</find>
+      <find>uploadvie</find>
+      <find>tile</find>
+      <find>2</find>
+      <find>removeItem</find>
+      <find>gallery</find>
+      <find>removeF</find>
+      <find>classes</find>
+      <find>width</find>
+      <find>dialo</find>
+      <find>upload</find>
+      <find>UploadDialog</find>
+      <find>UploadView</find>
+      <find>PhotoGridList</find>
+      <find>files</find>
+      <find>keys</find>
+      <find>this.fileUploader</find>
+      <find>UploadInterface</find>
+      <find>choose</find>
+      <find>&amp;&amp;</find>
     </findStrings>
     <replaceStrings>
       <replace>TargetImage</replace>
@@ -206,7 +210,6 @@
       <replace>className</replace>
       <replace>updatedFiles</replace>
       <replace>.file</replace>
-      <replace>UploadDialog</replace>
       <replace>GridList</replace>
       <replace>Upload</replace>
       <replace>tile.preview</replace>
@@ -214,6 +217,14 @@
       <replace>create-a-new-gallery</replace>
       <replace>img</replace>
       <replace>removeItem</replace>
+      <replace>UploadView</replace>
+      <replace>.gallery.files</replace>
+      <replace>galleryData</replace>
+      <replace>removeFile</replace>
+      <replace>ImageGrid</replace>
+      <replace>UploadDialog</replace>
+      <replace>GalleryForm</replace>
+      <replace>UploadInterface</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\web\react\react-firebase-gallery\node_modules</dir>
@@ -226,16 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/PictureForm.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-images-upload/index.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-images-upload/compiled.js" />
-        <option value="$PROJECT_DIR$/src/components/ToDoListItem.js" />
-        <option value="$PROJECT_DIR$/src/components/Gallery.js" />
-        <option value="$PROJECT_DIR$/src/components/GalleryUploadItem.js" />
-        <option value="$PROJECT_DIR$/src/scripts/cloudinary-widget.js" />
-        <option value="$PROJECT_DIR$/src/components/GalleryUpload.js" />
-        <option value="$PROJECT_DIR$/.env.development.local" />
-        <option value="$PROJECT_DIR$/src/config/keys.js" />
         <option value="$PROJECT_DIR$/src/components/TargetImage.js" />
         <option value="$PROJECT_DIR$/src/components/Canvas.js" />
         <option value="$PROJECT_DIR$/src/workers/PreviewWorker.js" />
@@ -267,16 +268,26 @@
         <option value="$PROJECT_DIR$/src/config/firebase/index.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/components/FirebaseUpload.js" />
-        <option value="$PROJECT_DIR$/src/views/Upload/index.js" />
         <option value="$PROJECT_DIR$/src/views/Upload/GridList.html" />
         <option value="$PROJECT_DIR$/src/views/Upload/GridList.js" />
-        <option value="$PROJECT_DIR$/src/views/Upload/dialog.js" />
         <option value="$PROJECT_DIR$/public/scripts/worker.js" />
         <option value="$PROJECT_DIR$/public/worker.js" />
+        <option value="$PROJECT_DIR$/src/views/Upload/dialog.js" />
         <option value="$PROJECT_DIR$/src/components/App/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
-        <option value="$PROJECT_DIR$/src/lib/image-resizer/index.js" />
+        <option value="$PROJECT_DIR$/src/views/Upload/index.js" />
+        <option value="$PROJECT_DIR$/src/views/Upload/index.css" />
         <option value="$PROJECT_DIR$/src/views/Upload/PhotoGridList.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/PhotoGridList.js" />
+        <option value="$PROJECT_DIR$/src/lib/image-resizer/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/uploader$.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/uploader.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/dialog.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/index.css" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/interface.js" />
       </list>
     </option>
   </component>
@@ -318,11 +329,6 @@
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,7 +347,7 @@
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Upload" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
@@ -349,6 +355,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Upload" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
@@ -376,19 +383,6 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="image-resizer" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Upload" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -406,19 +400,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload\views" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\image-resizer" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\public" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\config\firebase" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\image-resizer" />
       <recent name="C:\web\react\react-firebase-gallery\public" />
       <recent name="C:\web\react\react-firebase-gallery\src\components" />
       <recent name="C:\web\react\react-firebase-gallery\src\tmp" />
       <recent name="C:\web\react\react-firebase-gallery\src\modified_modules" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\image-resizer" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\public" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\config\firebase" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\App" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -455,12 +449,13 @@
       <workItem from="1536423327955" duration="3351000" />
       <workItem from="1536666274419" duration="29000" />
       <workItem from="1539055173923" duration="4020000" />
-      <workItem from="1539075282594" duration="15880000" />
+      <workItem from="1539075282594" duration="25424000" />
+      <workItem from="1539151082996" duration="7863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137324000" />
+    <option name="totallyTimeSpent" value="154731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -493,9 +488,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/modified_modules/react-image-resizer/src/utils.js" />
-    <entry file="file://$PROJECT_DIR$/src/modified_modules/react-image-resizer/src/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/modified_modules/react-image-resizer/lib/index.js" />
     <entry file="file://$PROJECT_DIR$/src/styles/ToDoList.css" />
     <entry file="file://$PROJECT_DIR$/src/components/resizedImage.js" />
     <entry file="file://$PROJECT_DIR$/src/components/ToDoListItem.js" />
@@ -531,13 +523,7 @@
     <entry file="file://$PROJECT_DIR$/src/styles/flexImagelayout.css" />
     <entry file="file://$PROJECT_DIR$/public/workers/RenderImage.js" />
     <entry file="file://$PROJECT_DIR$/src/tmp/Preview.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/tools/ImageCompression.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tools/ImageCompression.js" />
     <entry file="file://$PROJECT_DIR$/src/tmp/FirebaseUpload.js" />
     <entry file="file://$PROJECT_DIR$/src/components/worker.js" />
     <entry file="file://$PROJECT_DIR$/src/config/firebase/keys.js" />
@@ -548,34 +534,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Upload/GridList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/Preview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Upload/GridList.html" />
     <entry file="file://$PROJECT_DIR$/src/config/firebase/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -586,13 +549,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/worker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/worker.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-image-resizer/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-532">
@@ -607,9 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="73" column="25" lean-forward="true" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
-          <folding>
-            <element signature="e#9#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,52 +590,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/Preview.js" />
     <entry file="file://$PROJECT_DIR$/src/components/App/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="11" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/image-resizer/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/dialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/galleryForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Upload/dialog.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/imageGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="680">
+          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Upload/PhotoGridList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/interface.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+        <state relative-caret-position="510">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/image-resizer/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-          <folding>
-            <element signature="e#9#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

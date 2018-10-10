@@ -12,6 +12,7 @@
     "react-id-generator": "^0.1.6",
     "react-image-file": "^0.3.0",
     "react-images-upload": "^1.1.99",
+    "react-lazyload": "^2.3.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
