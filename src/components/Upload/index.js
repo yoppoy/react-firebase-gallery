@@ -90,9 +90,10 @@ class Upload extends Component {
 
         if (files[id]) {
             URL.revokeObjectURL(files[id].img);
-            files[id] = undefined;
-            this.setState({files});
-            console.log(this.state.files);
+            delete files[id];
+            this.setState({files}, () => {
+                console.log(this.state.files);
+            });
         }
     };
 
