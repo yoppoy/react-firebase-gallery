@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Slide from '@material-ui/core/Slide';
-import ImageGrid from "./imageGrid";
-import FilledInput from '@material-ui/core/FilledInput';
-import InputLabel from '@material-ui/core/InputLabel';
+import green from '@material-ui/core/colors/green';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import PropTypes from "prop-types";
+import CollectionsIcon from '@material-ui/icons/Collections';
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import ChipInput from 'material-ui-chip-input';
 import {withStyles} from "@material-ui/core/styles";
 import "./index.css";
 
@@ -17,8 +17,23 @@ const styles = theme => ({
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
     },
+    formControl: {
+        width: '100%'
+    },
     buttonUpload: {
-        width: '100%',
+        marginTop: theme.spacing.unit,
+        marginBottom: theme.spacing.unit,
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        height: 50,
+        backgroundColor: green[600],
+        color: 'white',
+        '&:hover': {
+            color: green[600]
+        }
+    },
+    buttonUploadIcon: {
+        marginRight: theme.spacing.unit,
     }
 });
 
@@ -32,16 +47,43 @@ class GalleryForm extends React.Component {
 
         return (
             <FormControl className={classes.formControl} variant="filled">
-                <Button className={classes.buttonUpload}>Upload</Button>
                 <TextField
                     required
-                    id="filled-required"
+                    id="galleryName"
                     label="Name"
-                    defaultValue="Hello World"
                     className={classes.textField}
                     margin="normal"
-                    variant="filled"
+                    variant="outlined"
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <CollectionsIcon color={"primary"}/>
+                            </InputAdornment>
+                        )
+                    }}
                 />
+                <TextField
+                    required
+                    id="location"
+                    label="Location"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <LocationOnIcon color={"primary"}/>
+                            </InputAdornment>
+                        )
+                    }}
+                />
+                <ChipInput
+                    placeholder={'Tags'}
+                    dataSource={['Portrait', 'Nature', 'Stuff']}
+                />
+                <Button className={classes.buttonUpload} onClick={this.props.functions.upload} color={"primary"}>
+                    <CloudUploadIcon className={classes.buttonUploadIcon}/> Upload
+                </Button>
             </FormControl>
         );
     }

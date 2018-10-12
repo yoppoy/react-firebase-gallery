@@ -12,9 +12,11 @@ import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import GooglePicker from 'react-google-picker';
 import Zoom from '@material-ui/core/Zoom';
 import "./index.css";
 import GalleryForm from "./galleryForm";
+import DrivePicker from "../drivePicker";
 import Slide from "@material-ui/core/Slide";
 
 const styles = theme => ({
@@ -97,8 +99,8 @@ const styles = theme => ({
             fontSize: 150
         },
         icon: {
-            marginRight: 10,
-            marginBottom: 4
+            marginRight: theme.spacing.unit,
+            marginBottom: theme.spacing.unit / 2,
         },
         driveIcon: {
             fontSize: 24
@@ -161,20 +163,21 @@ class UploadInterface extends React.Component {
                             <Fade in={!this.state.dragging}>
                                 <Grid item className={classes.center}>
                                     <CloudUploadIcon className={classes.backgroundIcon}/>
-                                    <Typography variant="subheading" className={classes.uploadTypo}>
+                                    <Typography variant="subtitle1" className={classes.uploadTypo}>
                                         Drag and drop photos anywhere on this page
                                     </Typography>
                                     {Object.keys(this.props.files).length === 0 &&
-                                    <div>
+                                    <div id="uploadButtonsContainer">
                                         <label htmlFor={'uploader'}
                                                className={classes.uploadButton + " MuiButtonBase-root-30 MuiButton-root-4 MuiButton-text-6 MuiButton-flat-9 "}>
                                             <AddAPhotoIcon className={classes.icon}/>
                                             Choose photos
                                         </label>
-                                        <Button color={"primary"} className={classes.clickable}>
-                                            <FontAwesomeIcon icon={faGoogleDrive}
-                                                             className={`${classes.icon} + ${classes.driveIcon}`}/>Choose
-                                            from drive</Button>
+                                        <DrivePicker addDriveFiles={this.props.functions.addDriveFiles}
+                                                     button={<Button color={"primary"} className={classes.clickable}>
+                                                         <FontAwesomeIcon icon={faGoogleDrive}
+                                                                          className={`${classes.icon} + ${classes.driveIcon}`}/>
+                                                         Choose from drive </Button>}/>
                                     </div>}
                                 </Grid>
                             </Fade>
@@ -196,7 +199,7 @@ class UploadInterface extends React.Component {
                 </Grid>
                 {Object.keys(this.props.files).length > 0 &&
                 <Grid className={classes.rightGridItem}>
-                    <GalleryForm/>
+                    <GalleryForm functions={this.props.functions}/>
                 </Grid>}
                 <div>
                 </div>

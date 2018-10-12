@@ -29,12 +29,11 @@ class Upload extends Component {
     };
 
     handleUploadSuccess = (filename) => {
-        //URL.revokeObjectURL()
         storageRef.child("galleries").child(filename).getDownloadURL().then(url => console.log(url));
         //storageRef.child("galleries").child('28e6a980-f440-491e-8937-4c60aef97468.jpg').delete().then(() => console.log("hello"));
         console.log("uploaded : " + filename);
     };
-    
+
     addFiles = (newFiles, index = 0, reader) => {
         let updatedFiles;
         let files;
@@ -45,6 +44,7 @@ class Upload extends Component {
         files = {...this.state.files};
         files[newId] = {
             id: newId,
+            type: "TARGET_FILE",
             img: null,
             name: newFiles[index].name,
             date: newFiles[index].lastModifiedDate.getDate(),
@@ -57,21 +57,48 @@ class Upload extends Component {
         this.setState({files}, () => {
             files = {...this.state.files};
             files[newId].img = URL.createObjectURL(newFiles[index]);
-            /*const resizedCanvas = document.createElement('canvas')
-            resizedCanvas.height = 500
-            resizedCanvas.width = 500;
-
-            pica().resize(files[newId].img , resizedCanvas, {
-                unsharpAmount: 80,
-                unsharpRadius: 0.6,
-                unsharpThreshold: 2
-            }).then(result => console.log(`resize done!  ${result}`))
-                .catch(err => console.log(err))*/
             this.setState({files}, () => {
                 this.addFiles(newFiles, index + 1)
             });
         });
     };
+
+    addDriveFiles = (newFiles) => {
+        let files;
+
+        files = {...this.state.files};
+        newFiles.forEach(file => {
+            files[file.id] = {
+                id: file.id,
+                type: "DRIVE_FILE",
+                img: "https://drive.google.com/thumbnail?id=" + file.id,
+                name: file.name,
+                date: file.lastEditedUtc,
+                file: null,
+                state: {
+                    loading: false,
+                    uploaded: true
+                }
+            };
+        });
+        this.setState({files});
+    };
+    /*
+    description: ""
+embedUrl: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/preview?usp=drive_web"
+iconUrl: "https://drive-thirdparty.googleusercontent.com/16/type/image/jpeg"
+id: "1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee"
+isShared: true
+lastEditedUtc: 1520595783077
+mimeType: "image/jpeg"
+name: "_DSC7307.jpg"
+parentId: "19G8WNQyUM8FasDN1wntSiLfKVPDg7m9R"
+rotation: 0
+rotationDegree: 0
+serviceId: "docs"
+sizeBytes: 16661669
+type: "photo"
+url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp=drive_web"*/
 
     handleChange = (event) => {
         this.addFiles([...event.target.files]);
@@ -80,9 +107,12 @@ class Upload extends Component {
     upload = () => {
         const {files} = this.state;
 
-        Object.keys(files).map(key => (
-            this.fileUploader.startUpload(files[key].file)
-        ));
+        console.log("Uploading files : ");
+        console.log(files);
+        Object.keys(files).map(key => {
+            if (files[key].type === "TARGET_FILE")
+                this.fileUploader.startUpload(files[key].file);
+        });
     };
 
     removeFile = (id) => {
@@ -121,6 +151,7 @@ class Upload extends Component {
                               files={this.state.files}
                               functions={{
                                   addFiles: this.addFiles,
+                                  addDriveFiles: this.addDriveFiles,
                                   removeFile: this.removeFile,
                                   upload: this.upload
                               }}/>
