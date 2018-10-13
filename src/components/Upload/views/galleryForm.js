@@ -8,6 +8,7 @@ import CollectionsIcon from '@material-ui/icons/Collections';
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import InputAdornment from '@material-ui/core/InputAdornment';
+import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import ChipInput from 'material-ui-chip-input';
 import {withStyles} from "@material-ui/core/styles";
 import "./index.css";
@@ -38,57 +39,91 @@ const styles = theme => ({
 });
 
 class GalleryForm extends React.Component {
+
     state = {
-        name: ''
+        formData: {
+            name: '',
+            location: '',
+        },
+        submitted: false,
     };
 
+    handleChange = (event) => {
+        const {formData} = this.state;
+
+        formData[event.target.name] = event.target.value;
+        this.setState({formData});
+    };
+
+    handleSubmit = () => {
+        this.setState({submitted: true}, () => {
+            this.props.functions.upload(this.state.formData);
+        });
+    };
+
+
     render() {
+        const {formData, submitted} = this.state;
         const {classes} = this.props;
 
         return (
-            <FormControl className={classes.formControl} variant="filled">
-                <TextField
-                    required
-                    id="galleryName"
-                    label="Name"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <CollectionsIcon color={"primary"}/>
-                            </InputAdornment>
-                        )
-                    }}
-                />
-                <TextField
-                    required
-                    id="location"
-                    label="Location"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <LocationOnIcon color={"primary"}/>
-                            </InputAdornment>
-                        )
-                    }}
-                />
-                <ChipInput
-                    placeholder={'Tags'}
-                    dataSource={['Portrait', 'Nature', 'Stuff']}
-                />
-                <Button className={classes.buttonUpload} onClick={this.props.functions.upload} color={"primary"}>
-                    <CloudUploadIcon className={classes.buttonUploadIcon}/> Upload
-                </Button>
-            </FormControl>
+            <ValidatorForm
+                ref="form"
+                onSubmit={this.handleSubmit}
+            >
+                <FormControl className={classes.formControl} onSubmit={this.handleSubmit} variant="filled">
+
+                    <TextValidator
+                        label="Name"
+                        onChange={this.handleChange}
+                        name="name"
+                        value={formData.name}
+                        validators={['required']}
+                        errorMessages={['this field is required']}
+                        className={classes.textField}
+                        margin="normal"
+                        variant="outlined"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <CollectionsIcon color={"primary"}/>
+                                </InputAdornment>
+                            )
+                        }}
+                    />
+                    <TextValidator
+                        label="Location"
+                        onChange={this.handleChange}
+                        name="location"
+                        value={formData.location}
+                        validators={['required']}
+                        errorMessages={['this field is required']}
+                        className={classes.textField}
+                        margin="normal"
+                        variant="outlined"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <LocationOnIcon color={"primary"}/>
+                                </InputAdornment>
+                            )
+                        }}
+                    />
+                    <Button type="submit" className={classes.buttonUpload} color={"primary"}>
+                        <CloudUploadIcon className={classes.buttonUploadIcon}/> Upload
+                    </Button>
+                </FormControl>
+            </ValidatorForm>
         );
     }
 }
 
+/*
+    <ChipInput
+        placeholder={'Tags'}
+        dataSource={['Portrait', 'Nature', 'Stuff']}
+    />
+* */
 
 GalleryForm.propTypes = {
     classes: PropTypes.object.isRequired,

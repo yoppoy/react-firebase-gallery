@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import FileUploader from 'react-firebase-file-uploader';
-import idGenerator from 'react-id-generator';
+import FileUploader from '../../lib/react-firebase-file-uploader';
+import {v4 as generateRandomID} from 'uuid';
 import firebaseApp from "../../config/firebase/index";
 import UploadDialog from "./views/dialog";
-import pica from 'pica';
 
 var storageRef = firebaseApp.storage().ref();
 
@@ -11,12 +10,8 @@ class Upload extends Component {
     state = {
         isUploading: false,
         progress: 0,
-        galleryData: {
-            name: "New gallery",
-            location: "",
-            tags: []
-        },
-        files: {}
+        files: {},
+        fireBaseKey: null
     };
 
     handleUploadStart = () => this.setState({isUploading: true, progress: 0});
@@ -29,15 +24,24 @@ class Upload extends Component {
     };
 
     handleUploadSuccess = (filename) => {
-        storageRef.child("galleries").child(filename).getDownloadURL().then(url => console.log(url));
-        //storageRef.child("galleries").child('28e6a980-f440-491e-8937-4c60aef97468.jpg').delete().then(() => console.log("hello"));
-        console.log("uploaded : " + filename);
+        let key = filename.replace(/\.[^/.]+$/, "");
+
+        if (this.state.fireBaseKey)
+            storageRef.child("Galleries").child(filename).getDownloadURL().then(url => {
+                console.log("Adding image : ", this.state.files[key]);
+                firebaseApp.database().ref('Galleries').child(this.state.fireBaseKey).child('images').push({
+                    name: this.state.files[key].name,
+                    url: url
+                }, () => console.log('pushed'));
+            });
+        else
+            console.log("Error firebase key not loaded");
     };
 
     addFiles = (newFiles, index = 0, reader) => {
         let updatedFiles;
         let files;
-        let newId = idGenerator();
+        let newId = generateRandomID();
 
         if (index >= newFiles.length)
             return;
@@ -104,14 +108,22 @@ url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp
         this.addFiles([...event.target.files]);
     };
 
-    upload = () => {
+    upload = (formData) => {
         const {files} = this.state;
-
-        console.log("Uploading files : ");
-        console.log(files);
-        Object.keys(files).map(key => {
-            if (files[key].type === "TARGET_FILE")
-                this.fileUploader.startUpload(files[key].file);
+        firebaseApp.database().ref('Galleries').push({
+            name: formData.name,
+            location: formData.location,
+            images: []
+        }).then((data) => {
+            this.setState({fireBaseKey: data.key}, () => {
+                Object.keys(files).map(key => {
+                    if (files[key].type === "TARGET_FILE") {
+                        this.fileUploader.startUpload(files[key].file, files[key].id);
+                    }
+                });
+            });
+        }).catch((error) => {
+            console.log('error ', error)
         });
     };
 
@@ -135,7 +147,7 @@ url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp
                     id="uploader"
                     name="uploader"
                     accept="image/*"
-                    storageRef={storageRef.child("galleries")}
+                    storageRef={storageRef.child("Galleries")}
                     onUploadStart={this.handleUploadStart}
                     onUploadError={this.handleUploadError}
                     onUploadSuccess={this.handleUploadSuccess}
@@ -147,8 +159,7 @@ url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp
                     multiple
                     required
                 />
-                <UploadDialog galleryData={this.state.gallery}
-                              files={this.state.files}
+                <UploadDialog files={this.state.files}
                               functions={{
                                   addFiles: this.addFiles,
                                   addDriveFiles: this.addDriveFiles,

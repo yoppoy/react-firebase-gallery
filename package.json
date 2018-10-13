@@ -13,17 +13,17 @@
     "firebase": "^5.0.4",
     "material-ui-chip-input": "^1.0.0-beta.8",
     "notistack": "^0.2.1",
-    "pica": "^4.1.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-dropzone": "^6.0.2",
     "react-firebase-file-uploader": "^2.4.1",
     "react-google-picker": "0.0.8",
-    "react-id-generator": "^0.1.6",
     "react-image-file": "^0.3.0",
     "react-images-upload": "^1.1.99",
     "react-lazyload": "^2.3.0",
-    "react-scripts": "1.1.4"
+    "react-material-ui-form-validator": "^2.0.2",
+    "react-scripts": "1.1.4",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

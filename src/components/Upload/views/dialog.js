@@ -71,8 +71,7 @@ class UploadDialog extends React.Component {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <UploadInterface galleryData={this.props.galleryData}
-                                     files={this.props.files}
+                    <UploadInterface files={this.props.files}
                                      functions={this.props.functions}/>
                 </Dialog>
             </div>

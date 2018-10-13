@@ -2,22 +2,21 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
-import Dropzone from 'react-dropzone';
 import Grid from '@material-ui/core/Grid';
 import {withStyles} from "@material-ui/core/styles";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGoogleDrive} from '@fortawesome/free-brands-svg-icons';
-import ImageGrid from "./imageGrid";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import GooglePicker from 'react-google-picker';
 import Zoom from '@material-ui/core/Zoom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faGoogleDrive} from '@fortawesome/free-brands-svg-icons';
+import Dropzone from 'react-dropzone';
 import "./index.css";
+
 import GalleryForm from "./galleryForm";
 import DrivePicker from "../drivePicker";
-import Slide from "@material-ui/core/Slide";
+import ImageGrid from "./imageGrid";
 
 const styles = theme => ({
         center: {
@@ -134,13 +133,12 @@ class UploadInterface extends React.Component {
     };
 
     onDragLeave = () => {
-        console.log("Leaving");
         this.setState({dragging: false});
     };
 
     render() {
+        const props = this.props;
         const {classes} = this.props;
-        this.inputElement = null;
 
         return (
             <Grid container
@@ -153,8 +151,8 @@ class UploadInterface extends React.Component {
                               onDrop={this.onDrop.bind(this)}
                               onDragEnter={this.onDragEnter.bind(this)}
                               onDragLeave={this.onDragLeave.bind(this)}
-                              className={`${classes.dropzone} + ${(Object.keys(this.props.files).length === 0 ? classes.flexCenter : '')}`}>
-                        <Zoom in={Object.keys(this.props.files).length > 0 && !this.state.dragging}>
+                              className={`${classes.dropzone} + ${(Object.keys(props.files).length === 0 ? classes.flexCenter : '')}`}>
+                        <Zoom in={Object.keys(props.files).length > 0 && !this.state.dragging}>
                             <Button variant="fab" color={"inherit"} className={classes.fab}>
                                 <AddIcon/>
                             </Button>
@@ -166,14 +164,14 @@ class UploadInterface extends React.Component {
                                     <Typography variant="subtitle1" className={classes.uploadTypo}>
                                         Drag and drop photos anywhere on this page
                                     </Typography>
-                                    {Object.keys(this.props.files).length === 0 &&
+                                    {Object.keys(props.files).length === 0 &&
                                     <div id="uploadButtonsContainer">
                                         <label htmlFor={'uploader'}
                                                className={classes.uploadButton + " MuiButtonBase-root-30 MuiButton-root-4 MuiButton-text-6 MuiButton-flat-9 "}>
                                             <AddAPhotoIcon className={classes.icon}/>
                                             Choose photos
                                         </label>
-                                        <DrivePicker addDriveFiles={this.props.functions.addDriveFiles}
+                                        <DrivePicker addDriveFiles={props.functions.addDriveFiles}
                                                      button={<Button color={"primary"} className={classes.clickable}>
                                                          <FontAwesomeIcon icon={faGoogleDrive}
                                                                           className={`${classes.icon} + ${classes.driveIcon}`}/>
@@ -182,9 +180,9 @@ class UploadInterface extends React.Component {
                                 </Grid>
                             </Fade>
                         </div>
-                        <Grid item className={Object.keys(this.props.files).length > 0 ? classes.fullWidth : ''}>
-                            <ImageGrid tileData={this.props.files}
-                                       removeFile={this.props.functions.removeFile}/>
+                        <Grid item className={Object.keys(props.files).length > 0 ? classes.fullWidth : ''}>
+                            <ImageGrid tileData={props.files}
+                                       removeFile={props.functions.removeFile}/>
 
                         </Grid>
                     </Dropzone>
@@ -197,7 +195,7 @@ class UploadInterface extends React.Component {
                         </div>
                     </Fade>
                 </Grid>
-                {Object.keys(this.props.files).length > 0 &&
+                {Object.keys(props.files).length > 0 &&
                 <Grid className={classes.rightGridItem}>
                     <GalleryForm functions={this.props.functions}/>
                 </Grid>}

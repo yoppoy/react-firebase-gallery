@@ -9,6 +9,7 @@ class DrivePicker extends React.Component {
     handleChange = (data) => {
         console.log(data);
 
+        console.log(data);
         switch (data.action) {
             case "picked" :
                 this.props.addDriveFiles(data.docs);
