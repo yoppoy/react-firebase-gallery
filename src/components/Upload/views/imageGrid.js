@@ -62,7 +62,7 @@ class ImageGrid extends React.Component {
         return (
             <div className={classes.root}>
                 {Object.keys(tileData).length > 0 &&
-                <GridList id="imageGrid" cellHeight={180} cols={5} spacing={10}>
+                <GridList id="imageGrid" cellHeight={180} spacing={10}>
                     {Object.keys(tileData).map((key) => {
                         return this.renderTile(tileData[key]);
                     })}

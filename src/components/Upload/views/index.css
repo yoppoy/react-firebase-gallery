@@ -6,7 +6,6 @@
     width: 100%;
 }
 
-
 #createNewGallery #uploadButtonsContainer > * {
     margin-right: 8px;
     margin-left: 8px;
@@ -18,4 +17,36 @@
 
 .picker {
     z-index: 1300 !important;
+}
+
+#createNewGallery .MuiGridListTile-root-265 {
+    width: 16.6667% !important;
+}
+
+@media only screen and (max-width: 1600px) {
+    #createNewGallery .MuiGridListTile-root-265 {
+        width: 20% !important;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    #createNewGallery .MuiGridListTile-root-265 {
+        width: 25% !important;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    #createNewGallery .MuiGridListTile-root-265 {
+        width: 33.333% !important;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    #createNewGallery .MuiGridListTile-root-265 {
+        width: 50% !important;
+    }
+}
+@media only screen and (max-width: 700px) {
+    #createNewGallery .MuiGridListTile-root-265 {
+        width: 100% !important;
+    }
 }
