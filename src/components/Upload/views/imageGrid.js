@@ -6,8 +6,11 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import DoneIcon from '@material-ui/icons/Done';
 import Image from '../../../lib/image-resizer/index';
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Grid from "../../../../node_modules/@material-ui/core/Grid/Grid";
+
 
 const styles = theme => ({
     root: {
@@ -20,6 +23,27 @@ const styles = theme => ({
         color: 'rgba(255, 255, 255, 0.8)',
         marginRight: '10px'
     },
+    progress: {
+        margin: theme.spacing.unit,
+    },
+    done: {
+      fontSize: 60,
+      color: 'white'
+    },
+    overlay: {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        display: 'flex',
+        flexWrap: 'wrap',
+        boxSizing: 'border-box',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: 'rgb(0,0,0,0.5)'
+    }
 });
 
 class ImageGrid extends React.Component {
@@ -41,16 +65,24 @@ class ImageGrid extends React.Component {
                         actionIcon={
                             <IconButton className={classes.icon} onClick={() => removeFile(tile.id)}>
                                 {
-                                    tile.state.loading === true &&
-                                    <CircularProgress className={classes.progress} thickness={3}/>
-                                }
-                                {
-                                    tile.state.loading === false &&
+                                    tile.state.isLoading === false &&
                                     <DeleteIcon/>
                                 }
                             </IconButton>
                         }
                     />
+                    {(tile.state.isLoading || tile.state.isUploaded) &&
+                    <div className={classes.overlay}>
+                        <Grid item>
+                            {tile.state.isLoading &&
+                            <CircularProgress className={classes.progress}/>
+                            }
+                            {tile.state.isUploaded &&
+                            <DoneIcon className={classes.done}/>
+                            }
+                        </Grid>
+                    </div>
+                    }
                 </GridListTile>);
         return (null);
     };
@@ -62,7 +94,7 @@ class ImageGrid extends React.Component {
         return (
             <div className={classes.root}>
                 {Object.keys(tileData).length > 0 &&
-                <GridList id="imageGrid" cellHeight={180} spacing={10}>
+                <GridList className="imageGrid" cellHeight={180} spacing={10}>
                     {Object.keys(tileData).map((key) => {
                         return this.renderTile(tileData[key]);
                     })}

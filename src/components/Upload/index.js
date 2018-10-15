@@ -25,7 +25,11 @@ class Upload extends Component {
 
     handleUploadSuccess = (filename) => {
         let key = filename.replace(/\.[^/.]+$/, "");
+        let updated = {...this.state.files};
 
+        updated[key].state.isLoading = false;
+        updated[key].state.isUploaded = true;
+        this.setState({files: updated});
         if (this.state.fireBaseKey)
             storageRef.child("Galleries").child(filename).getDownloadURL().then(url => {
                 console.log("Adding image : ", this.state.files[key]);
@@ -54,8 +58,8 @@ class Upload extends Component {
             date: newFiles[index].lastModifiedDate.getDate(),
             file: newFiles[index],
             state: {
-                loading: false,
-                uploaded: true
+                isLoading: false,
+                isUploaded: false
             }
         };
         this.setState({files}, () => {
@@ -80,29 +84,13 @@ class Upload extends Component {
                 date: file.lastEditedUtc,
                 file: null,
                 state: {
-                    loading: false,
-                    uploaded: true
+                    isLoading: false,
+                    isUploaded: false
                 }
             };
         });
         this.setState({files});
     };
-    /*
-    description: ""
-embedUrl: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/preview?usp=drive_web"
-iconUrl: "https://drive-thirdparty.googleusercontent.com/16/type/image/jpeg"
-id: "1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee"
-isShared: true
-lastEditedUtc: 1520595783077
-mimeType: "image/jpeg"
-name: "_DSC7307.jpg"
-parentId: "19G8WNQyUM8FasDN1wntSiLfKVPDg7m9R"
-rotation: 0
-rotationDegree: 0
-serviceId: "docs"
-sizeBytes: 16661669
-type: "photo"
-url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp=drive_web"*/
 
     handleChange = (event) => {
         this.addFiles([...event.target.files]);
@@ -110,6 +98,8 @@ url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp
 
     upload = (formData) => {
         const {files} = this.state;
+        let updated = {...this.state.files};
+
         firebaseApp.database().ref('Galleries').push({
             name: formData.name,
             location: formData.location,
@@ -118,6 +108,8 @@ url: "https://drive.google.com/file/d/1dWDI4nEKxNuBG6LJEHR5nskahzJzkeee/view?usp
             this.setState({fireBaseKey: data.key}, () => {
                 Object.keys(files).map(key => {
                     if (files[key].type === "TARGET_FILE") {
+                        updated[key].state.isLoading = true;
+                        this.setState({files: updated});
                         this.fileUploader.startUpload(files[key].file, files[key].id);
                     }
                 });

@@ -1,8 +1,8 @@
-#createNewGallery #imageGrid .imageTile {
+#createNewGallery .imageGrid .imageTile {
     background: rgba(0, 0, 0, 0.8);
 }
 
-#createNewGallery #imageGrid {
+#createNewGallery .imageGrid {
     width: 100%;
 }
 
@@ -19,34 +19,34 @@
     z-index: 1300 !important;
 }
 
-#createNewGallery .MuiGridListTile-root-265 {
+#createNewGallery .imageGrid > li {
     width: 16.6667% !important;
 }
 
 @media only screen and (max-width: 1600px) {
-    #createNewGallery .MuiGridListTile-root-265 {
+    #createNewGallery .imageGrid > li {
         width: 20% !important;
     }
 }
 
 @media only screen and (max-width: 1300px) {
-    #createNewGallery .MuiGridListTile-root-265 {
+    #createNewGallery .imageGrid > li {
         width: 25% !important;
     }
 }
 
 @media only screen and (max-width: 1300px) {
-    #createNewGallery .MuiGridListTile-root-265 {
+    #createNewGallery .imageGrid > li {
         width: 33.333% !important;
     }
 }
 @media only screen and (max-width: 1000px) {
-    #createNewGallery .MuiGridListTile-root-265 {
+    #createNewGallery .imageGrid > li {
         width: 50% !important;
     }
 }
 @media only screen and (max-width: 700px) {
-    #createNewGallery .MuiGridListTile-root-265 {
+    #createNewGallery .imageGrid > li {
         width: 100% !important;
     }
 }
