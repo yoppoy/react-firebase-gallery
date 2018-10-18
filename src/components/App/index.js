@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Upload from '../Upload';
-
+import UploadView from '../Upload/views';
 
 class Index extends Component {
     render() {
         return (
             <div className="container">
-                <Upload/>
+                <UploadView/>
             </div>
         );
     }

@@ -1,17 +1,22 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
-import TextField from '@material-ui/core/TextField';
+import red from '@material-ui/core/colors/red';
 import FormControl from '@material-ui/core/FormControl';
+import Typography from '@material-ui/core/Typography';
 import PropTypes from "prop-types";
 import CollectionsIcon from '@material-ui/icons/Collections';
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import ErrorIcon from "@material-ui/icons/Error";
+import ReplayIcon from "@material-ui/icons/Replay";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import InputAdornment from '@material-ui/core/InputAdornment';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
-import ChipInput from 'material-ui-chip-input';
 import {withStyles} from "@material-ui/core/styles";
 import "./index.css";
+//import ChipInput from 'material-ui-chip-input';
 
 const styles = theme => ({
     textField: {
@@ -26,7 +31,6 @@ const styles = theme => ({
         marginBottom: theme.spacing.unit,
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        height: 50,
         backgroundColor: green[600],
         color: 'white',
         '&:hover': {
@@ -34,7 +38,16 @@ const styles = theme => ({
         }
     },
     buttonUploadIcon: {
+        marginLeft: theme.spacing.unit,
+    },
+    errorText: {
+        marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
+        color: red[800]
+    },
+    progress: {
+        color: 'white',
+        marginLeft: theme.spacing.unit
     }
 });
 
@@ -44,8 +57,21 @@ class GalleryForm extends React.Component {
         formData: {
             name: '',
             location: '',
+            coord: {}
         },
-        submitted: false,
+        status: {
+            progress: 0,
+            uploading: false,
+            uploaded: false,
+            errors: false,
+        }
+    };
+
+    updateStatus(status) {
+        console.log(status);
+        this.setState({status}, () => {
+            console.log("->", this.state.status);
+        });
     };
 
     handleChange = (event) => {
@@ -56,14 +82,15 @@ class GalleryForm extends React.Component {
     };
 
     handleSubmit = () => {
-        this.setState({submitted: true}, () => {
-            this.props.functions.upload(this.state.formData);
-        });
+        let status = {...this.state.status};
+
+        status.uploading = true;
+        this.setState({status});
+        this.props.functions.upload(this.state.formData);
     };
 
-
     render() {
-        const {formData, submitted} = this.state;
+        const {formData} = this.state;
         const {classes} = this.props;
 
         return (
@@ -109,21 +136,33 @@ class GalleryForm extends React.Component {
                             )
                         }}
                     />
-                    <Button type="submit" className={classes.buttonUpload} color={"primary"}>
-                        <CloudUploadIcon className={classes.buttonUploadIcon}/> Upload
+                    {this.state.status.error &&
+                    <Typography className={classes.errorText} variant="subtitle2" >
+                        {this.state.status.error}
+                    </Typography>
+                    }
+                    <Button type="submit" className={classes.buttonUpload}>
+                        Upload
+                        {this.state.status.progress.uploading &&
+                        <span>{this.state.status.progress} %</span>}
+                        {(!this.state.status.uploading && !this.state.status.uploaded && !this.state.status.error) &&
+                        <CloudUploadIcon className={classes.buttonUploadIcon}/>
+                        }
+                        {this.state.status.uploading &&
+                        <CircularProgress id="formProgess" className={classes.progress} thickness={5}/>
+                        }
+                        {this.state.status.uploaded &&
+                        <CheckCircleIcon className={classes.buttonUploadIcon}/>
+                        }
+                        {this.state.status.error &&
+                        <ReplayIcon className={classes.buttonUploadIcon}/>
+                        }
                     </Button>
                 </FormControl>
             </ValidatorForm>
         );
     }
 }
-
-/*
-    <ChipInput
-        placeholder={'Tags'}
-        dataSource={['Portrait', 'Nature', 'Stuff']}
-    />
-* */
 
 GalleryForm.propTypes = {
     classes: PropTypes.object.isRequired,

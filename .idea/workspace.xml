@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731f0787-94ac-4e75-af0b-4b3fcc1dda7c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/firebase/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/google-geocode/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/views/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/drivePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/drivePicker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Upload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/views/dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Upload/views/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/views/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/views/interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/views/interface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/firebase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/firebase/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/.editorconfig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/.flowconfig" beforeDir="false" />
@@ -47,19 +57,19 @@
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.33" value="2" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="5" />
-          <entry key="env" value="2" />
+          <entry key="css" value="7" />
+          <entry key="env" value="3" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="2" />
+          <entry key="html" value="3" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="51" />
+          <entry key="js" value="74" />
           <entry key="json" value="4" />
           <entry key="md" value="2" />
           <entry key="png" value="1" />
@@ -68,35 +78,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
-          <entry key="HTML" value="2" />
+          <entry key="CSS" value="7" />
+          <entry key="HTML" value="3" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="51" />
+          <entry key="JavaScript" value="74" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="271" />
-          <entry key="env" value="90" />
+          <entry key="css" value="327" />
+          <entry key="env" value="121" />
           <entry key="gitignore" value="6" />
-          <entry key="html" value="18" />
-          <entry key="js" value="11477" />
+          <entry key="html" value="39" />
+          <entry key="js" value="17733" />
           <entry key="json" value="8" />
           <entry key="md" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="271" />
-          <entry key="HTML" value="18" />
+          <entry key="CSS" value="327" />
+          <entry key="HTML" value="39" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="11477" />
+          <entry key="JavaScript" value="17733" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="96" />
+          <entry key="PLAIN_TEXT" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -109,10 +119,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/dialog.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+            <state relative-caret-position="760">
+              <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -121,22 +131,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Upload/views/imageGrid.js">
+        <entry file="file://$PROJECT_DIR$/src/api/firebase/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="493">
+              <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="88" column="17" lean-forward="true" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+            <state relative-caret-position="287">
+              <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -147,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Upload/views/interface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1406">
-              <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+            <state relative-caret-position="502">
+              <caret line="209" column="74" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -159,8 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Upload/views/galleryForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="253">
+              <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -168,11 +175,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/firebase/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="332">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -190,51 +215,44 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>galleryData</find>
-      <find>isUplao</find>
-      <find>galleryDa</find>
-      <find>filename</find>
-      <find>startUpload</find>
-      <find>export</find>
-      <find>fileuploader</find>
-      <find>galleryDat</find>
-      <find>uuid/v</find>
-      <find>custom</find>
-      <find>uu</find>
-      <find>uuid</find>
+      <find>reset</find>
+      <find>Modal</find>
+      <find>props</find>
+      <find>transi</find>
+      <find>generateRandomF</find>
+      <find>randomizeFile</find>
+      <find>UploadDialog</find>
+      <find>validateIm</find>
       <find>generate</find>
-      <find>startU</find>
-      <find>generateRandom</find>
-      <find>idGe</find>
-      <find>string</find>
+      <find>upload</find>
+      <find>removeFile</find>
       <find>ref=</find>
-      <find>galleries</find>
-      <find>.ref(</find>
-      <find>assets</find>
-      <find>resizeAndCropImage</find>
-      <find>storageRef</find>
-      <find>loading</find>
-      <find>updated</find>
+      <find>updateFormStat</find>
+      <find>interfaceRef</find>
+      <find>addFi</find>
+      <find>ref</find>
       <find>create</find>
+      <find>state.</find>
+      <find>status</find>
+      <find>...this.status</find>
+      <find>.props.status</find>
       <find>isUploaded</find>
-      <find>#imageGrid</find>
-      <find>imageGrid</find>
-      <find>&gt; div</find>
+      <find>validat</find>
+      <find>uploaded</find>
+      <find>console.log</find>
+      <find>catch</find>
+      <find>object</find>
+      <find>gutte</find>
+      <find>e</find>
+      <find>validateFi</find>
     </findStrings>
     <replaceStrings>
-      <replace>TargetImage</replace>
-      <replace>renderPreview</replace>
-      <replace>className</replace>
-      <replace>updatedFiles</replace>
-      <replace>.file</replace>
-      <replace>GridList</replace>
       <replace>Upload</replace>
       <replace>tile.preview</replace>
       <replace>tile.date</replace>
       <replace>create-a-new-gallery</replace>
       <replace>img</replace>
       <replace>removeItem</replace>
-      <replace>UploadView</replace>
       <replace>.gallery.files</replace>
       <replace>removeFile</replace>
       <replace>ImageGrid</replace>
@@ -250,6 +268,15 @@
       <replace>galleryData</replace>
       <replace>.imageGrid</replace>
       <replace>&gt; li</replace>
+      <replace>FIREBASE_REF</replace>
+      <replace>FIREBASE_DATABASE_REF</replace>
+      <replace>TARGET_FILE</replace>
+      <replace>DRIVE_FILE</replace>
+      <replace>galleryKey</replace>
+      <replace>key</replace>
+      <replace>UploadView</replace>
+      <replace>.state.status</replace>
+      <replace>...this.state.status</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\web\react\react-firebase-gallery\node_modules</dir>
@@ -262,10 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/resizedImage.js" />
-        <option value="$PROJECT_DIR$/src/components/CanvasComponent.js" />
-        <option value="$PROJECT_DIR$/src/services/ReadFiles.js" />
-        <option value="$PROJECT_DIR$/src/components/firebaseUpload.js" />
         <option value="$PROJECT_DIR$/src/tmp.js" />
         <option value="$PROJECT_DIR$/src/services/tools/ReadFiles.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
@@ -292,27 +315,31 @@
         <option value="$PROJECT_DIR$/src/views/Upload/PhotoGridList.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/PhotoGridList.js" />
         <option value="$PROJECT_DIR$/src/lib/image-resizer/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/views/index.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/uploader$.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/uploader.js" />
         <option value="$PROJECT_DIR$/public/worker.ks.js" />
         <option value="$PROJECT_DIR$/public/worker.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/components/App/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/views/interface.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/drivePicker.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/views/dialog.js" />
         <option value="$PROJECT_DIR$/src/components/App/index.css" />
         <option value="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/src/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/api/firebase/config.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/dialog.js" />
+        <option value="$PROJECT_DIR$/src/components/App/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/drivePicker.js" />
+        <option value="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/index.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/index.css" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/interface.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" />
+        <option value="$PROJECT_DIR$/src/api/google-geocode/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/views/index.js" />
+        <option value="$PROJECT_DIR$/src/api/firebase/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
       </list>
     </option>
   </component>
@@ -353,20 +380,38 @@
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="firebase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="google-geocode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
@@ -382,6 +427,12 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Upload" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
@@ -415,19 +466,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\api\firebase" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\api\firebase\" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\api\firebase\config.js" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\react-firebase-file-uploader" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\image-resizer" />
       <recent name="C:\web\react\react-firebase-gallery\public" />
       <recent name="C:\web\react\react-firebase-gallery\src\components" />
       <recent name="C:\web\react\react-firebase-gallery\src\tmp" />
       <recent name="C:\web\react\react-firebase-gallery\src\modified_modules" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\react-firebase-file-uploader" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload\views" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib\image-resizer" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\public" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Upload" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,17 +521,18 @@
       <workItem from="1539329963105" duration="11915000" />
       <workItem from="1539416761676" duration="334000" />
       <workItem from="1539417377802" duration="9486000" />
+      <workItem from="1539844364373" duration="21921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203731000" />
+    <option name="totallyTimeSpent" value="225652000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21227081" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2118019" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -508,10 +560,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/scripts/JavaScript-Load-Image/js/index.js" />
-    <entry file="file://$PROJECT_DIR$/public/scripts/JavaScript-Load-Image/js/demo/demo.js" />
-    <entry file="file://$PROJECT_DIR$/public/scripts/JavaScript-Load-Image/js/load-image.js" />
-    <entry file="file://$PROJECT_DIR$/src/styles/flexImagelayout.css" />
     <entry file="file://$PROJECT_DIR$/public/workers/RenderImage.js" />
     <entry file="file://$PROJECT_DIR$/src/tmp/Preview.js" />
     <entry file="file://$PROJECT_DIR$/src/lib/tools/ImageCompression.js" />
@@ -519,13 +567,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/worker.js" />
     <entry file="file://$PROJECT_DIR$/src/config/firebase/keys.js" />
     <entry file="file://$PROJECT_DIR$/src/views/Upload/GridList.html" />
-    <entry file="file://$PROJECT_DIR$/src/config/firebase/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-image-resizer/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-532">
@@ -574,13 +615,6 @@
     <entry file="file://$USER_HOME$/Downloads/_DSC0239insta - Copy (2).jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@fortawesome/free-brands-svg-icons/faStackOverflow.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -622,34 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="104" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/drivePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
         </state>
       </provider>
     </entry>
@@ -679,16 +689,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/package.json" />
     <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/flow/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/App/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/CustomUploadButton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -696,70 +696,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/imageGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="98" column="35" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="35" />
+        <state relative-caret-position="1445">
+          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
           <folding>
-            <element signature="e#52#93#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/interface.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1406">
-          <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/firebase/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="true" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Upload/views/dialog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="539">
+          <caret line="54" column="84" lean-forward="true" selection-start-line="54" selection-start-column="84" selection-end-line="54" selection-end-column="84" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/drivePicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="88" column="17" lean-forward="true" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/firebase/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/interface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="209" column="74" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Upload/views/galleryForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="253">
+          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/imageGrid.js">
+    <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+        <state relative-caret-position="153">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/views/index.css">
+    <entry file="file://$PROJECT_DIR$/src/api/firebase/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="493">
+          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

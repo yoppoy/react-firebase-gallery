@@ -118,9 +118,19 @@ const styles = theme => ({
 ;
 
 class UploadInterface extends React.Component {
-    state = {
-        dragging: false
-    };
+    constructor(props) {
+        super(props);
+
+        this.formRef = React.createRef();
+        this.updateFormStatus = (status) => {
+            this.formRef.current.updateStatus(status);
+        };
+        this.state = {
+            dragging: false,
+        };
+    }
+
+
 
     onDrop = (files, rejected) => {
         console.log(rejected);
@@ -197,7 +207,7 @@ class UploadInterface extends React.Component {
                 </Grid>
                 {Object.keys(props.files).length > 0 &&
                 <Grid className={classes.rightGridItem}>
-                    <GalleryForm functions={this.props.functions}/>
+                    <GalleryForm functions={this.props.functions} innerRef={this.formRef}/>
                 </Grid>}
                 <div>
                 </div>

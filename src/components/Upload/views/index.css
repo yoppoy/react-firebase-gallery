@@ -23,6 +23,15 @@
     width: 16.6667% !important;
 }
 
+#createNewGallery #formProgess {
+    height: 24px !important;
+    width: 24px !important;
+}
+
+#createNewGallery #formProgess > svg {
+    margin: 2px;
+}
+
 @media only screen and (max-width: 1600px) {
     #createNewGallery .imageGrid > li {
         width: 20% !important;

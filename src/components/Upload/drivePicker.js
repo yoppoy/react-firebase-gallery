@@ -1,18 +1,14 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import {withStyles} from "@material-ui/core/styles";
-import PropTypes from "prop-types";
 import GooglePicker from 'react-google-picker';
 
 class DrivePicker extends React.Component {
 
     handleChange = (data) => {
-        console.log(data);
-
-        console.log(data);
         switch (data.action) {
             case "picked" :
                 this.props.addDriveFiles(data.docs);
+                break;
+            default :
                 break;
         }
     };

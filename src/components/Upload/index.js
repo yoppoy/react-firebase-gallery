@@ -1,22 +1,49 @@
 import React, {Component} from 'react';
 import FileUploader from '../../lib/react-firebase-file-uploader';
 import {v4 as generateRandomID} from 'uuid';
-import firebaseApp from "../../config/firebase/index";
-import UploadDialog from "./views/dialog";
+import {FIREBASE_UPLOAD_REF} from "../../api/firebase/config";
+import firebaseWrapper from "../../api/firebase";
+import UploadInterface from "./views/interface";
 
-var storageRef = firebaseApp.storage().ref();
+const TARGET_FILE = "TARGET_FILE";
+const DRIVE_FILE = "DRIVE_FILE";
+const DRIVE_THUMBNAIL_URL = "https://drive.google.com/thumbnail?id=";
+
 
 class Upload extends Component {
-    state = {
-        isUploading: false,
-        progress: 0,
-        files: {},
-        fireBaseKey: null
+    constructor(props) {
+        super(props);
+
+        this.firebaseWrapper = new firebaseWrapper();
+        this.state = {
+            status: {
+                progress: 0,
+                uploading: false,
+                uploaded: false,
+                error: null
+            },
+            files: {},
+            galleryKey: null
+        };
+        this.interfaceRef = React.createRef();
+    }
+
+    handleUploadStart = () => {
+        let status = {...this.state.status};
+
+        status.uploading = true;
+        this.setState({status});
+        this.interfaceRef.current.updateFormStatus(status);
     };
 
-    handleUploadStart = () => this.setState({isUploading: true, progress: 0});
+    handleProgress = (progress) => {
+        let status = {...this.state.status};
 
-    handleProgress = (progress) => this.setState({progress});
+        status.progress = progress;
+        console.log(progress);
+        this.setState({status});
+        this.interfaceRef.current.updateFormStatus(status);
+    };
 
     handleUploadError = (error) => {
         this.setState({isUploading: false});
@@ -25,34 +52,91 @@ class Upload extends Component {
 
     handleUploadSuccess = (filename) => {
         let key = filename.replace(/\.[^/.]+$/, "");
-        let updated = {...this.state.files};
 
-        updated[key].state.isLoading = false;
-        updated[key].state.isUploaded = true;
-        this.setState({files: updated});
-        if (this.state.fireBaseKey)
-            storageRef.child("Galleries").child(filename).getDownloadURL().then(url => {
-                console.log("Adding image : ", this.state.files[key]);
-                firebaseApp.database().ref('Galleries').child(this.state.fireBaseKey).child('images').push({
-                    name: this.state.files[key].name,
-                    url: url
-                }, () => console.log('pushed'));
+        this.firebaseWrapper.saveImageToDatabase(this.state.files[key], filename, this.state.galleryKey).then(() => {
+            this.validateFileUpload(key);
+        })
+    };
+
+    handleChange = (event) => {
+        this.addFiles([...event.target.files]);
+    };
+
+    reset = () => {
+        const files = {...this.state.files};
+
+        if (files) {
+            Object.keys(files).map(key => {
+                this.removeFile(key);
+                return (null);
             });
-        else
-            console.log("Error firebase key not loaded");
+            this.setState({
+                isUploading: false,
+                progress: 0,
+                files: {},
+                galleryKey: null
+            });
+        }
+    };
+
+    upload = (formData) => {
+        const {files} = this.state;
+        let updated = {...this.state.files};
+        let status;
+
+        this.firebaseWrapper.saveGalleryToDatabase(formData).then((data) => {
+            console.log(data);
+            this.setState({galleryKey: data.key}, () => {
+                Object.keys(files).map(key => {
+                    if (files[key].type === TARGET_FILE) {
+                        updated[key].state.isLoading = true;
+                        this.setState({files: updated});
+                        this.fileUploader.startUpload(files[key].file, files[key].id);
+                    }
+                    else
+                        this.validateFileUpload(key);
+                    return (null);
+                });
+            });
+        }).catch((error) => {
+            status = {...this.state.status};
+            status.error = error;
+            this.setState({status});
+            this.interfaceRef.current.updateFormStatus(status);
+        });
+    };
+
+    addDriveFiles = (newFiles) => {
+        let files;
+
+        files = {...this.state.files};
+        newFiles.forEach(file => {
+            files[file.id] = {
+                id: file.id,
+                type: DRIVE_FILE,
+                img: DRIVE_THUMBNAIL_URL + file.id,
+                name: file.name,
+                date: file.lastEditedUtc,
+                file: null,
+                state: {
+                    isLoading: false,
+                    isUploaded: false
+                }
+            };
+        });
+        this.setState({files});
     };
 
     addFiles = (newFiles, index = 0, reader) => {
-        let updatedFiles;
-        let files;
+        let files = {...this.state.files};
         let newId = generateRandomID();
 
+        console.log(this.interfaceRef);
         if (index >= newFiles.length)
             return;
-        files = {...this.state.files};
         files[newId] = {
             id: newId,
-            type: "TARGET_FILE",
+            type: TARGET_FILE,
             img: null,
             name: newFiles[index].name,
             date: newFiles[index].lastModifiedDate.getDate(),
@@ -71,60 +155,37 @@ class Upload extends Component {
         });
     };
 
-    addDriveFiles = (newFiles) => {
-        let files;
-
-        files = {...this.state.files};
-        newFiles.forEach(file => {
-            files[file.id] = {
-                id: file.id,
-                type: "DRIVE_FILE",
-                img: "https://drive.google.com/thumbnail?id=" + file.id,
-                name: file.name,
-                date: file.lastEditedUtc,
-                file: null,
-                state: {
-                    isLoading: false,
-                    isUploaded: false
-                }
-            };
-        });
-        this.setState({files});
-    };
-
-    handleChange = (event) => {
-        this.addFiles([...event.target.files]);
-    };
-
-    upload = (formData) => {
-        const {files} = this.state;
+    validateFileUpload = (key) => {
         let updated = {...this.state.files};
+        let completed;
+        let status;
 
-        firebaseApp.database().ref('Galleries').push({
-            name: formData.name,
-            location: formData.location,
-            images: []
-        }).then((data) => {
-            this.setState({fireBaseKey: data.key}, () => {
-                Object.keys(files).map(key => {
-                    if (files[key].type === "TARGET_FILE") {
-                        updated[key].state.isLoading = true;
-                        this.setState({files: updated});
-                        this.fileUploader.startUpload(files[key].file, files[key].id);
-                    }
-                });
+        updated[key].state = {
+            isLoading: false,
+            isUploaded: true
+        };
+        this.setState({files: updated}, () => {
+            completed = Object.keys(this.state.files).every((key) => {
+                return (this.state.files[key].state.isUploaded);
             });
-        }).catch((error) => {
-            console.log('error ', error)
+            if (completed) {
+                status = {...this.state.status};
+                status.uploaded = true;
+                status.uploading = false;
+                this.interfaceRef.current.updateFormStatus(status);
+                this.props.close();
+            }
         });
     };
 
-    removeFile = (id) => {
+    removeFile = (key) => {
         let files = {...this.state.files};
+        let file = files[key];
 
-        if (files[id]) {
-            URL.revokeObjectURL(files[id].img);
-            delete files[id];
+        if (file) {
+            if (file.type === TARGET_FILE)
+                URL.revokeObjectURL(files[key].img);
+            delete files[key];
             this.setState({files}, () => {
                 console.log(this.state.files);
             });
@@ -133,13 +194,13 @@ class Upload extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{display: 'inherit', height: '100%'}}>
                 <FileUploader
                     hidden
                     id="uploader"
                     name="uploader"
                     accept="image/*"
-                    storageRef={storageRef.child("Galleries")}
+                    storageRef={this.firebaseWrapper.getStorageRef().child(FIREBASE_UPLOAD_REF)}
                     onUploadStart={this.handleUploadStart}
                     onUploadError={this.handleUploadError}
                     onUploadSuccess={this.handleUploadSuccess}
@@ -151,23 +212,18 @@ class Upload extends Component {
                     multiple
                     required
                 />
-                <UploadDialog files={this.state.files}
-                              functions={{
-                                  addFiles: this.addFiles,
-                                  addDriveFiles: this.addDriveFiles,
-                                  removeFile: this.removeFile,
-                                  upload: this.upload
-                              }}/>
+                <UploadInterface files={this.state.files}
+                                 innerRef={this.interfaceRef}
+                                 functions={{
+                                     addFiles: this.addFiles,
+                                     addDriveFiles: this.addDriveFiles,
+                                     removeFile: this.removeFile,
+                                     upload: this.upload,
+                                     reset: this.reset
+                                 }}/>
             </div>
         );
     }
 }
 
-/*
-*                 <div>
-                    <PhotoGridList tileData={this.state.files} removeItem={this.removeFile}/>
-                </div>
-                <Button onClick={this.uploadToFirebase}>Upload</Button>
-
-* */
 export default Upload;

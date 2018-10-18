@@ -10,7 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 import "./index.css";
-import UploadInterface from "./interface";
+import Upload from "../index";
 
 function Transition(props) {
     return <Slide direction="up" {...props} />;
@@ -28,10 +28,17 @@ const styles = theme => ({
     }
 });
 
-class UploadDialog extends React.Component {
-    state = {
-        open: false,
-    };
+class UploadView extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.ref = React.createRef();
+        this.state = {
+            open: false,
+            ref: React.createRef()
+        };
+    }
 
     handleClickOpen = () => {
         this.setState({open: true});
@@ -39,11 +46,7 @@ class UploadDialog extends React.Component {
 
     handleClose = () => {
         this.setState({open: false});
-    };
-
-    create = () => {
-        this.props.functions.upload();
-        this.handleClose();
+        this.ref.current.reset();
     };
 
     render() {
@@ -54,9 +57,9 @@ class UploadDialog extends React.Component {
                 <Button onClick={this.handleClickOpen}>Create a new gallery</Button>
                 <Dialog
                     id="createNewGallery"
-                    open={true} /*{this.state.open}*/
+                    open={this.state.open}
                     TransitionComponent={Transition}
-                    keepMounted
+                    keepMounted={false}
                     fullScreen
                     onClose={this.handleClose}
                     aria-labelledby="create-a-new-gallery"
@@ -71,8 +74,7 @@ class UploadDialog extends React.Component {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <UploadInterface files={this.props.files}
-                                     functions={this.props.functions}/>
+                    <Upload ref={this.ref} close={this.handleClose}/>
                 </Dialog>
             </div>
         );
@@ -80,8 +82,8 @@ class UploadDialog extends React.Component {
 }
 
 
-UploadDialog.propTypes = {
+UploadView.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(UploadDialog);
+export default withStyles(styles)(UploadView);
