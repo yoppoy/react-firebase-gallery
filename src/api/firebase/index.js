@@ -33,6 +33,22 @@ class firebaseWrapper {
             }));
         });
     };
+
+    getGalleries() {
+        let back = [];
+        let tmp;
+
+        return new Promise((resolve, reject) => {
+            firebaseApp.database().ref('Galleries').once("value", (snapshot) => {
+                snapshot.forEach(function (child) {
+                    tmp = {...child.val()};
+                    tmp.key = child.key;
+                    back.push(tmp);
+                });
+                resolve(back);
+            }).catch(error => reject(error));
+        });
+    }
 }
 
 export default firebaseWrapper;
