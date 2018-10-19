@@ -4,35 +4,51 @@ import firebaseWrapper from '../../../api/firebase';
 
 class MapView extends React.PureComponent {
     constructor(props) {
-        super (props);
+        super(props);
         this.state = {
             galleries: [],
             isMarkerShown: false,
         };
         this.firebase = new firebaseWrapper();
         this.firebase.getGalleries().then(galleries => {
+            galleries.forEach((gallery) => {
+                gallery.status = {
+                    open: false
+                };
+            });
             this.setState({galleries});
-        })
+        });
     }
 
-    componentDidMount() {
-        this.delayedShowMarker()
+    openGallery(key) {
+        let galleries = {...this.galleries};
+
+        galleries[key].status.open = true;
+        this.setState({galleries});
     }
 
-    delayedShowMarker = () => {
-        setTimeout(() => {
-            this.setState({isMarkerShown: true})
-        }, 3000)
-    };
+    closeGallery(key) {
+        let galleries = {...this.galleries};
 
-    handleMarkerClick = () => {
-        this.setState({isMarkerShown: false});
-        this.delayedShowMarker()
-    };
+        galleries[key].status.open = false;
+        this.setState({galleries});
+    }
+
+    toggleGallery(key) {
+        let galleries = {...this.galleries};
+
+        galleries[key].status.open = !galleries[key].status.open;
+        this.setState({galleries});
+    }
 
     render() {
         return (
-            <Map galleries={this.state.galleries} />
+            <Map galleries={this.state.galleries}
+                 handlers={{
+                     open: this.openGallery,
+                     close: this.closeGallery,
+                     toggle: this.toggleGallery
+                 }}/>
         )
     }
 }
