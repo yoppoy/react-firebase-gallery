@@ -68,10 +68,7 @@ class GalleryForm extends React.Component {
     };
 
     updateStatus(status) {
-        console.log(status);
-        this.setState({status}, () => {
-            console.log("->", this.state.status);
-        });
+        this.setState({status});
     };
 
     handleChange = (event) => {
@@ -84,9 +81,12 @@ class GalleryForm extends React.Component {
     handleSubmit = () => {
         let status = {...this.state.status};
 
-        status.uploading = true;
-        this.setState({status});
-        this.props.functions.upload(this.state.formData);
+        if (!status.uploading) {
+            status.uploading = true;
+            this.setState({status});
+            this.props.functions.upload(this.state.formData);
+
+        }
     };
 
     render() {
@@ -137,7 +137,7 @@ class GalleryForm extends React.Component {
                         }}
                     />
                     {this.state.status.error &&
-                    <Typography className={classes.errorText} variant="subtitle2" >
+                    <Typography className={classes.errorText} variant="subtitle2">
                         {this.state.status.error}
                     </Typography>
                     }
@@ -150,6 +150,9 @@ class GalleryForm extends React.Component {
                         }
                         {this.state.status.uploading &&
                         <CircularProgress id="formProgess" className={classes.progress} thickness={5}/>
+                        }
+                        {this.state.status.uploading &&
+                        <span style={{marginLeft: 5}}>{this.state.status.progress}%</span>
                         }
                         {this.state.status.uploaded &&
                         <CheckCircleIcon className={classes.buttonUploadIcon}/>

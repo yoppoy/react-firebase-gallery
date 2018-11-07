@@ -6,6 +6,8 @@ const os = require('os');
 const path = require('path');
 const cloudinary = require('cloudinary');
 const admin = require('firebase-admin');
+const compressor = require('./imageCompression');
+const spawn = require('child-process-promise').spawn;
 
 /*
  * Initialising web services
@@ -23,25 +25,24 @@ cloudinary.config({
 var db = admin.database();
 var ref = db.ref(process.env.FIREBASE_DATABASE_REF);
 
-
-/*
-* Get request to obtain the image from google drive (id from file picker api)
-* */
-function getFromDrive(fileId) {
-    var url = "not implemented";
-    return (url);
-}
-
 function uploadToCloudinary(url) {
     console.log("uploading to cloudinary ", url);
     return (new Promise((resolve, reject) => {
-        cloudinary.v2.uploader.upload(url, (error, result) => {
-            if (!error)
-                resolve(result);
-            reject(error);
-        });
+        cloudinary.v2.uploader.upload(url, {
+                eager: [
+                    {width: 1500, height: 1000, crop: "fit"},
+                    {width: 900, height: 600, crop: "fit"},
+                    {width: 300, height: 200, crop: "fit"}]
+            },
+            (error, result) => {
+                console.log(result);
+                if (!error)
+                    resolve(result);
+                reject(error);
+            });
     }));
 }
+
 
 function deleteFromStorage() {
     return (new Promise((resolve, reject) => {
@@ -50,13 +51,17 @@ function deleteFromStorage() {
     ));
 }
 
-/*
-* Saving new url to firebase and deleting from the storage the tmp uploaded one
-* */
-function saveToFirebase(GalleryId, imageId, newUrl) {
+/**
+ * Saving new url to firebase and deleting from the storage the tmp uploaded one
+ * @param galleryId
+ * @param imageId
+ * @param newUrl
+ * @returns {Promise<any>}
+ */
+function saveToFirebase(galleryId, imageId, data) {
     console.log("Saving to firebase");
     return (new Promise((resolve, reject) => {
-            ref.child(GalleryId).child('images').child(imageId).update({url: newUrl}).then(result => {
+            ref.child(galleryId).child('images').child(imageId).update(data).then(result => {
                 deleteFromStorage().then(result => {
                     console.log(result);
                     resolve(result);
@@ -72,40 +77,80 @@ function saveToFirebase(GalleryId, imageId, newUrl) {
     ));
 }
 
-function resizeImage(url, name) {
-    const tmpFilePath = path.join(os.tmpdir(), path.basename(name));
-    let newUrl = url;
-
+/**
+ * Generates 3 compressed images :
+ * - Compressed full size
+ * - Lighbox size
+ * - Thumbnail size
+ * Then uploads one by one the images on cloudinary
+ * @param url
+ * @param galleryId
+ * @param imageId
+ * @returns {Promise<any>}
+ */
+function uploadImage(url, galleryId, imageId) {
     return (new Promise((resolve, reject) => {
-            resolve(url);
+
+            uploadToCloudinary(compressed[key]).then(result => {
+                object[key] = result.url;
+                saveToFirebase(galleryId, imageId, object).then(result => {
+                    resolve(result);
+                }).catch(error => {
+                    reject(error);
+                });
+            }).catch(error => {
+                reject(error);
+            });
         }
     ));
 }
 
-/*
+function extractUrl(val) {
+    let url = val.url;
+
+    return (new Promise((resolve, reject) => {
+            if (val.hasOwnProperty('token')) {
+                reject("Not implemented");
+                /*getFileFromDrive(url, val.token).then(url => {
+                    resolve(url);
+                }).catch((err) => {
+                    reject(err);
+                });*/
+            }
+            else
+                resolve(url);
+        }
+    ));
+}
+
+/**
  * Event triggered when a new image is saved in the database
  * (not when it is uploaded ! when its reference is saves on a gallery)
+ * @type {CloudFunction<DataSnapshot>}
  */
 exports.onFileUpload = functions.database.ref('/Galleries/{galleryId}/images/{imageId}')
     .onCreate((snapshot, context) => {
-        const GalleryId = context.params.galleryId;
-        const ImageId = context.params.imageId;
+        const galleryId = context.params.galleryId;
+        const imageId = context.params.imageId;
 
         console.log("VALUE: ", snapshot.val());
         return (new Promise((resolve, reject) => {
-            resizeImage(snapshot.val().url, snapshot.val().name).then(tmpDir => {
-                uploadToCloudinary(tmpDir).then(result => {
-                    console.log("Received : ", result);
-                    saveToFirebase(GalleryId, ImageId, result.url).then(result => {
-                        resolve (result);
+            extractUrl(snapshot.val()).then(imageUrl => {
+                compressor(imageUrl).then((imageUrl) => {
+                    uploadToCloudinary(imageUrl).then(result => {
+                        saveToFirebase(galleryId, imageId, {
+                            url: result.eager[0].url,
+                            lightbox: result.eager[1].url,
+                            thumbnail: result.eager[2].url
+                        }).then(result => {
+                            resolve(result);
+                        }).catch(error => {
+                            reject(error);
+                        });
                     }).catch(error => {
-                        reject (error);
+                        reject(error);
                     });
-                }).catch(error => {
-                    reject (error);
                 });
-            }).catch(error => {
-                reject (error);
             });
         }));
     });

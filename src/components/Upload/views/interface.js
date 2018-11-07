@@ -93,26 +93,39 @@ const styles = theme => ({
             zIndex: 8,
             pointerEvents: 'none'
         },
+        dropzoneContainer: {
+            marginTop: -32
+        },
         backgroundIcon: {
             color: 'rgb(0, 0, 0, 0.1)',
-            fontSize: 150
-        },
+            fontSize:
+                150
+        }
+        ,
         icon: {
             marginRight: theme.spacing.unit,
-            marginBottom: theme.spacing.unit / 2,
-        },
+            marginBottom:
+                theme.spacing.unit / 2,
+        }
+        ,
         driveIcon: {
             fontSize: 24
-        },
+        }
+        ,
         uploadButton: {
             background: theme.palette.primary.main,
-            color: 'white',
-            pointerEvents: 'auto'
-        },
+            color:
+                'white',
+            pointerEvents:
+                'auto'
+        }
+        ,
         uploadTypo: {
             color: 'rgb(0, 0, 0, 0.6)',
-            marginTop: -18,
-            marginBottom: 40
+            marginTop:
+                -18,
+            marginBottom:
+                40
         }
     })
 ;
@@ -130,10 +143,7 @@ class UploadInterface extends React.Component {
         };
     }
 
-
-
     onDrop = (files, rejected) => {
-        console.log(rejected);
         this.setState({dragging: false});
         this.props.functions.addFiles(files);
     };
@@ -167,7 +177,7 @@ class UploadInterface extends React.Component {
                                 <AddIcon/>
                             </Button>
                         </Zoom>
-                        <div className={`${classes.fillBackground} + ${classes.flexCenter}`}>
+                        <div className={`${classes.dropzoneContainer} + ${classes.fillBackground} + ${classes.flexCenter}`}>
                             <Fade in={!this.state.dragging}>
                                 <Grid item className={classes.center}>
                                     <CloudUploadIcon className={classes.backgroundIcon}/>
@@ -176,11 +186,11 @@ class UploadInterface extends React.Component {
                                     </Typography>
                                     {Object.keys(props.files).length === 0 &&
                                     <div id="uploadButtonsContainer">
-                                        <label htmlFor={'uploader'}
-                                               className={classes.uploadButton + " MuiButtonBase-root-30 MuiButton-root-4 MuiButton-text-6 MuiButton-flat-9 "}>
+                                        <label id='uploadLabel' htmlFor={'uploader'}/>
+                                        <Button onClick={() => document.getElementById('uploadLabel').click()}
+                                                className={classes.uploadButton}>
                                             <AddAPhotoIcon className={classes.icon}/>
-                                            Choose photos
-                                        </label>
+                                            Choose photos</Button>
                                         <DrivePicker addDriveFiles={props.functions.addDriveFiles}
                                                      button={<Button color={"primary"} className={classes.clickable}>
                                                          <FontAwesomeIcon icon={faGoogleDrive}

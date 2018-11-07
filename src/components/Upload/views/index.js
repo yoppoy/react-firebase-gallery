@@ -35,16 +35,22 @@ class UploadView extends React.Component {
 
         this.ref = React.createRef();
         this.state = {
-            open: false,
+            open: this.props.open ? this.props.open : false,
             ref: React.createRef()
         };
     }
 
-    handleClickOpen = () => {
+    openDialog = () => {
         this.setState({open: true});
     };
 
+    handleClickOpen = () => {
+        this.openDialog();
+    };
+
     handleClose = () => {
+        if (this.props.onClose)
+            this.props.onClose();
         this.setState({open: false});
         this.ref.current.reset();
     };
@@ -54,7 +60,6 @@ class UploadView extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Create a new gallery</Button>
                 <Dialog
                     id="createNewGallery"
                     open={this.state.open}

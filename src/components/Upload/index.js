@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import FileUploader from '../../lib/react-firebase-file-uploader';
 import {v4 as generateRandomID} from 'uuid';
-import {FIREBASE_UPLOAD_REF} from "../../api/firebase/config";
+import {FIREBASE_UPLOAD_REF} from "../../config/firebase";
 import firebaseWrapper from "../../api/firebase";
 import UploadInterface from "./views/interface";
 
@@ -23,7 +23,8 @@ class Upload extends Component {
                 error: null
             },
             files: {},
-            galleryKey: null
+            galleryKey: null,
+            driveToken: null
         };
         this.interfaceRef = React.createRef();
     }
@@ -40,7 +41,6 @@ class Upload extends Component {
         let status = {...this.state.status};
 
         status.progress = progress;
-        console.log(progress);
         this.setState({status});
         this.interfaceRef.current.updateFormStatus(status);
     };
@@ -50,6 +50,10 @@ class Upload extends Component {
         console.error(error);
     };
 
+    /**
+     * Saves the url of the uploaded image in the database
+     * @param filename
+     */
     handleUploadSuccess = (filename) => {
         let key = filename.replace(/\.[^/.]+$/, "");
 
@@ -62,6 +66,9 @@ class Upload extends Component {
         this.addFiles([...event.target.files]);
     };
 
+    /**
+     * Resets the selected files
+     */
     reset = () => {
         const files = {...this.state.files};
 
@@ -79,13 +86,18 @@ class Upload extends Component {
         }
     };
 
+    /**
+     * Creates the gallery in firebase
+     * Uploads the images to storage
+     * Links those image to the database
+     * @param formData
+     */
     upload = (formData) => {
         const {files} = this.state;
         let updated = {...this.state.files};
         let status;
 
         this.firebaseWrapper.saveGalleryToDatabase(formData).then((data) => {
-            console.log(data);
             this.setState({galleryKey: data.key}, () => {
                 Object.keys(files).map(key => {
                     if (files[key].type === TARGET_FILE) {
@@ -93,8 +105,11 @@ class Upload extends Component {
                         this.setState({files: updated});
                         this.fileUploader.startUpload(files[key].file, files[key].id);
                     }
-                    else
-                        this.validateFileUpload(key);
+                    else {
+                        this.firebaseWrapper.saveDriveImageToDatabase(files[key], this.state.galleryKey, this.state.driveToken).then(() => {
+                            this.validateFileUpload(key);
+                        });
+                    }
                     return (null);
                 });
             });
@@ -106,7 +121,11 @@ class Upload extends Component {
         });
     };
 
-    addDriveFiles = (newFiles) => {
+    /**
+     * Adds files selected from drive to the files state variable
+     * @param newFiles
+     */
+    addDriveFiles = (newFiles, token) => {
         let files;
 
         files = {...this.state.files};
@@ -125,13 +144,19 @@ class Upload extends Component {
             };
         });
         this.setState({files});
+        this.setState({driveToken: token});
     };
 
+    /**
+     * Adds a list of files to the files state variable
+     * @param newFiles
+     * @param index
+     * @param reader
+     */
     addFiles = (newFiles, index = 0, reader) => {
         let files = {...this.state.files};
         let newId = generateRandomID();
 
-        console.log(this.interfaceRef);
         if (index >= newFiles.length)
             return;
         files[newId] = {
@@ -155,6 +180,11 @@ class Upload extends Component {
         });
     };
 
+    /**
+     * Validates the upload of an image, this is the final step to update the ui when an image has been uploaded
+     * Detects if there are any files left to upload, if yes state changes
+     * @param key
+     */
     validateFileUpload = (key) => {
         let updated = {...this.state.files};
         let completed;
@@ -178,6 +208,10 @@ class Upload extends Component {
         });
     };
 
+    /**
+     * Removes a file from the files state variable
+     * @param key
+     */
     removeFile = (key) => {
         let files = {...this.state.files};
         let file = files[key];
@@ -186,9 +220,7 @@ class Upload extends Component {
             if (file.type === TARGET_FILE)
                 URL.revokeObjectURL(files[key].img);
             delete files[key];
-            this.setState({files}, () => {
-                console.log(this.state.files);
-            });
+            this.setState({files});
         }
     };
 
@@ -199,7 +231,7 @@ class Upload extends Component {
                     hidden
                     id="uploader"
                     name="uploader"
-                    accept="image/*"
+                    accept=".jpg"
                     storageRef={this.firebaseWrapper.getStorageRef().child(FIREBASE_UPLOAD_REF)}
                     onUploadStart={this.handleUploadStart}
                     onUploadError={this.handleUploadError}

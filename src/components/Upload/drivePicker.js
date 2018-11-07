@@ -3,10 +3,14 @@ import GooglePicker from 'react-google-picker';
 
 class DrivePicker extends React.Component {
 
+    state = {
+        token: null
+    };
+
     handleChange = (data) => {
         switch (data.action) {
             case "picked" :
-                this.props.addDriveFiles(data.docs);
+                this.props.addDriveFiles(data.docs, this.state.token);
                 break;
             default :
                 break;
@@ -20,7 +24,7 @@ class DrivePicker extends React.Component {
                           developerKey={process.env.REACT_APP_GOOGLE_DRIVE_API_KEY}
                           scope={['https://www.googleapis.com/auth/drive.readonly']}
                           onChange={this.handleChange}
-                          onAuthenticate={token => console.log('oauth token:', token)}
+                          onAuthenticate={token => this.setState({token})}
                           multiselect={true}
                           navHidden={true}
                           authImmediate={false}

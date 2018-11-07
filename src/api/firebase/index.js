@@ -1,4 +1,4 @@
-import {firebaseApp, FIREBASE_DATABASE_REF, FIREBASE_UPLOAD_REF} from "../../api/firebase/config";
+import {firebaseApp, FIREBASE_DATABASE_REF, FIREBASE_UPLOAD_REF} from "../../config/firebase";
 import geocodeWrapper from '../google-geocode';
 
 class firebaseWrapper {
@@ -45,7 +45,16 @@ class firebaseWrapper {
                     tmp.key = child.key;
                     back.push(tmp);
                 });
+                console.log(back);
                 resolve(back);
+            }).catch(error => reject(error));
+        });
+    }
+
+    getGallery(id) {
+        return new Promise((resolve, reject) => {
+            firebaseApp.database().ref('Galleries').child(id).once("value", (snapshot) => {
+               resolve(snapshot.val());
             }).catch(error => reject(error));
         });
     }

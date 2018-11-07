@@ -25,6 +25,7 @@ const styles = theme => ({
     },
     progress: {
         margin: theme.spacing.unit,
+        color: 'white'
     },
     done: {
       fontSize: 60,

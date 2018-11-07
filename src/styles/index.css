@@ -5,3 +5,27 @@ html, body, #root, .container {
 body {
     margin: 0px;
 }
+
+a {
+    text-decoration: none;
+}
+
+.fillPage {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.fillPage > div {
+    flex: 1 ;
+}
+
+.fillPage > .noGrow {
+    flex-grow: 0;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}

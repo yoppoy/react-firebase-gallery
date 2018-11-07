@@ -7,7 +7,16 @@ const FirebaseConfig = {
     storageBucket: process.env.REACT_APP_FIREBASE_BUCKET
 };
 
+/**
+ * Name of firebase database
+ * @type {string}
+ */
 const FIREBASE_DATABASE_REF = "Galleries";
+
+/**
+ * Name of firebase folder in storage bucket
+ * @type {string}
+ */
 const FIREBASE_UPLOAD_REF = "Galleries";
 
 const firebaseApp = firebase.initializeApp(FirebaseConfig);

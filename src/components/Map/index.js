@@ -1,48 +1,153 @@
-import React from "react"
-import {compose, withProps, withStateHandlers} from "recompose"
-import {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker,
-    InfoWindow
-} from "react-google-maps"
+import React, {Component, Fragment} from "react";
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import firebaseWrapper from "../../api/firebase";
+import Typography from "@material-ui/core/Typography";
 
-const Map = compose(
-    withStateHandlers(() => ({
-        isOpen: false,
-    }), {
-        onToggleOpen: ({isOpen}) => () => ({
-            isOpen: !isOpen,
-        })
-    }),
-    withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=" + process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-        loadingElement: <div style={{height: `100%`}}/>,
-        containerElement: <div style={{height: `100%`}}/>,
-        mapElement: <div style={{height: `100%`}}/>,
-        defaultZoom: 4,
-        defaultLat: 50,
-        defaultLng: 3,
-    }),
-    withScriptjs,
-    withGoogleMap,
-)((props) =>
-    <GoogleMap
-        defaultZoom={props.defaultZoom}
-        defaultCenter={{lat: props.defaultLat, lng: props.defaultLng}}
-    >
-        {props.galleries.map((gallery, index) => {
-            return <Marker key={index} position={{lat: gallery.location.lat, lng: gallery.location.lng}}
-                           onClick={props.onToggleOpen}>
-            </Marker>;
-        })}
-        <InfoWindow position={{lat: props.defaultLat, lng: props.defaultLng}}>
-            <div>
-                HELLO
-            </div>
-        </InfoWindow>}
-    </GoogleMap>
-);
+export class CustomMap extends Component {
+    constructor(props) {
+        super(props);
+        let bounds = new props.google.maps.LatLngBounds({lat: 46.2276, lng: 2.2137});
+        this.imageViewer = React.createRef();
+        this.state = {
+            galleries: [],
+            bounds: bounds,
+            selected: {}
+        };
+        this.firebase = new firebaseWrapper();
+    }
 
-export default Map;
+    componentDidMount() {
+        this.updateGalleries();
+    }
+
+    handleEvent(evtName) {
+        console.log(evtName);
+    }
+
+    updateGalleries = () => {
+        this.firebase.getGalleries().then(galleries => {
+            this.addGalleries(galleries);
+            this.props.onLoad();
+        });
+    };
+
+    loadImage = (url) => {
+        const hdLoaderImg = new Image();
+
+        hdLoaderImg.src = url;
+        return (hdLoaderImg);
+    };
+
+    /**
+     * Add Galleries to the state
+     * It also stores a buffer of loaded images to load the thumbnails in the background
+     * @param galleries
+     */
+    addGalleries = (galleries) => {
+        let bounds = new this.props.google.maps.LatLngBounds();
+
+        if (galleries) {
+            for (let key in galleries) {
+                galleries[key].buffer = [];
+                console.log(galleries[key]);
+                galleries[key].imageViewerImages = [];
+                if (galleries[key].images) {
+                    Object.keys(galleries[key].images).map((item, i) => {
+                        galleries[key].buffer.push(this.loadImage(galleries[key].images[item].thumbnail));
+                        galleries[key].imageViewerImages.push({src: galleries[key].images[item].url});
+                    });
+                    bounds.extend(galleries[key].location);
+                }
+            }
+            console.log(bounds);
+            this.setState({galleries, bounds});
+        }
+    };
+
+    getSelectedGallery = () => {
+        return (this.state.galleries[this.state.selectedIndex]);
+    };
+
+    getImageKeys = () => {
+        return (Object.keys(this.state.galleries[this.state.selectedIndex].images));
+    };
+
+    renderImages() {
+        const selected = this.getSelectedGallery();
+        return (<div>
+            {Object.keys(selected.images).map((item, i) => (
+                <img key={i}
+                     src={selected.images[item].thumbnail}
+                     style={{height: '100px', marginLeft: 13, marginTop: 6}}/>
+            ))}
+        </div>);
+    }
+
+
+    onMarkerClick = index => (props, marker, e) => {
+        if (marker === this.state.marker)
+            this.setState({selected: {}});
+        else {
+            this.setState({
+                selectedIndex: index,
+                selected: marker
+            }, () => {
+                let index = Object.keys(this.state.galleries[this.state.selectedIndex].images)[0];
+            });
+        }
+    };
+
+
+    onMapClicked = () => {
+        console.log('tapped');
+    };
+
+    render() {
+        const style = {
+            width: '100%',
+            height: '100%'
+        };
+        return (
+            <Fragment>
+                <Map google={this.props.google}
+                     style={style}
+                     initialCenter={{lat: 35, lng: 1}}
+                     zoom={3}>
+                    {this.state.galleries.map((gallery, index) => {
+                        return <Marker key={index} position={gallery.location}
+                                       onClick={this.onMarkerClick(index)}>
+                        </Marker>;
+                    })}
+                    <InfoWindow
+                        onClick={this.onMapClicked} marker={this.state.selected} visible={true}>
+                        <div>
+                            {this.state.selected.hasOwnProperty('name') &&
+                            <Fragment>
+                                <a href={"/galleries/" + this.getSelectedGallery().key}>
+                                    <Typography variant={"h5"}
+                                                style={{
+                                                    textTransform: 'uppercase',
+                                                    fontWeight: 'bold',
+                                                    marginLeft: 13,
+                                                    marginTop: 10
+                                                }}
+                                                color={"primary"}>{this.getSelectedGallery().name}</Typography>
+                                </a>
+                                <div style={{marginBottom: 10}}>
+                                    {this.renderImages()}
+                                </div>
+                            </Fragment>
+                            }
+                        </div>
+                    </InfoWindow>
+                </Map>
+            </Fragment>
+        );
+    }
+}
+
+export default GoogleApiWrapper({
+        apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    }
+)
+(CustomMap)
