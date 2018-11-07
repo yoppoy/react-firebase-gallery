@@ -1,7 +1,6 @@
 import React from 'react';
 import firebaseWrapper from '../../api/firebase/index'
 import {withStyles} from "@material-ui/core/styles";
-import GalleryView from "./views/gallery";
 
 const styles = theme => ({});
 
@@ -19,7 +18,6 @@ class AdminDashboard extends React.Component {
 
     componentDidMount() {
         this.firebaseWrapper.getGalleries().then((galleries) => {
-            console.log(galleries);
             this.setState({galleries});
         });
     }

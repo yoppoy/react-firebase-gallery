@@ -24,10 +24,6 @@ class Index extends Component {
         this.uploader = React.createRef();
     }
 
-    componentDidMount() {
-        console.log(this.uploader);
-    }
-
     openDialog = () => {
         const {history: {push}} = this.props;
         push('/admin/new-gallery')

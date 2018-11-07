@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react';
 import firebaseWrapper from '../../api/firebase/index';
 import ImageViewer from './imageViewer';
-import {Map} from "google-maps-react";
 import Typography from "@material-ui/core/Typography";
-import Loading from "../Shared/views/loading";
+import Loading from "../Shared/loading";
 import CollectionIcon from "@material-ui/icons/Collections";
 
 
@@ -42,9 +41,6 @@ export default class Gallery extends React.Component {
         const hdLoaderImg = new Image();
 
         hdLoaderImg.src = url;
-        hdLoaderImg.onload = () => {
-          console.log("loaded");
-        };
         return (hdLoaderImg);
     };
 
@@ -54,8 +50,6 @@ export default class Gallery extends React.Component {
         this.firebase.getGallery(this.props.match.params.id).then(gallery => {
             gallery.buffer = [];
             for (let key in gallery.images) {
-                console.log(key);
-                console.log(gallery.images[key]);
                 images.push({src: gallery.images[key].url});
                 gallery.buffer.push(this.loadImage(gallery.images[key].lightbox));
             }
@@ -65,7 +59,6 @@ export default class Gallery extends React.Component {
 
 
     onImageClick = index => {
-        console.log(index);
         this.imageViewer.current.openLightbox(index);
     };
 
@@ -79,7 +72,7 @@ export default class Gallery extends React.Component {
                     </Typography>
                     <div>
                         {Object.keys(this.state.gallery.images).map((item, i) => (
-                            <img key={i} onClick={() => this.onImageClick(i)}
+                            <img key={i} alt={item} onClick={() => this.onImageClick(i)}
                                  src={this.state.gallery.images[item].lightbox}
                                  style={styles.image}/>
                         ))}

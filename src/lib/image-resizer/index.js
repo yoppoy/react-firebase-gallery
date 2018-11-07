@@ -13,7 +13,6 @@ export default class Image extends React.Component<Props, State> {
     }
 
     resizeImage = () => {
-        console.log(this.props.height);
         const target = ReactDOM.findDOMNode(this.refs.image);
         if (target === null) {
             return;

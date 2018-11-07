@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import CollectionsIcon from '@material-ui/icons/Collections';
 import MapIcon from "@material-ui/icons/Map";
+import AddIcon from "@material-ui/icons/AddPhotoAlternate";
 
 const styles = theme => ({
     root: {
@@ -20,9 +21,9 @@ const styles = theme => ({
         height: 42
     },
     button: {
-      color: 'white',
+        color: 'white',
         marginRight: 15,
-        border : '2px solid white'
+        border: '2px solid white'
     },
     menuButton: {
         marginLeft: -12,
@@ -37,7 +38,7 @@ const styles = theme => ({
         '&:hover': {
             backgroundColor: "#fff",
         },
-        border : '2px solid white'
+        border: '2px solid white'
     },
     icon: {
         color: 'white'
@@ -55,18 +56,20 @@ class TopBar extends React.PureComponent {
     render() {
         const {classes} = this.props;
         return (
-            <div className={classes.root + ' ' + 'noGrow'}>
+            <div className={classes.root + ' noGrow'}>
                 <AppBar position="static">
                     <Toolbar>
-                        <Link to="/" className={classes.grow}>
-                            <Typography variant={"h6"} className={classes.icon}><MapIcon className={classes.anonygrapherIcon}/> Anonygrapher</Typography>
+                        <Link to="/">
+                            <Typography variant={"h6"} className={classes.icon}><MapIcon
+                                className={classes.anonygrapherIcon}/> Anonygrapher</Typography>
                         </Link>
+                        <div className={classes.grow}></div>
                         <Link to="/admin/">
                             <Button className={classes.button}>manage Gallery<CollectionsIcon
                                 className={classes.collectionIcon}/></Button>
                         </Link>
                         <Link to="/admin/new-gallery">
-                            <Button className={classes.whiteButton}>New Gallery<CollectionsIcon
+                            <Button className={classes.whiteButton}>New Gallery<AddIcon
                                 className={classes.collectionIcon}/></Button>
                         </Link>
                     </Toolbar>

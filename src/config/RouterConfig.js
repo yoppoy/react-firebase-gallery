@@ -1,11 +1,10 @@
 /*
 * Configures the redux router
 * */
-import React, {Fragment} from 'react';
+import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Routes from './Routes';
-import {Map} from "google-maps-react";
 
 const RouterConfig = () => (
     <BrowserRouter>

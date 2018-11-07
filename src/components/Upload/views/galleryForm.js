@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import PropTypes from "prop-types";
 import CollectionsIcon from '@material-ui/icons/Collections';
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import ErrorIcon from "@material-ui/icons/Error";
 import ReplayIcon from "@material-ui/icons/Replay";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";

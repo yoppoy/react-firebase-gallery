@@ -2,7 +2,7 @@
 * Configures the redux router
 * */
 import React from 'react'
-import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from '../components/Home/';
 import Admin from '../components/Admin/';
 import Gallery from '../components/Gallery/';

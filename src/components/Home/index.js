@@ -1,13 +1,8 @@
 import React, {Component} from "react";
-import UploadView from '../Upload/views/index';
-import MapView from '../Map/views/index';
+import MapView from '../Map/index';
 import '../../styles/index.css'
 
 class Index extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="container">

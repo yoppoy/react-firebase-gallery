@@ -45,7 +45,6 @@ class firebaseWrapper {
                     tmp.key = child.key;
                     back.push(tmp);
                 });
-                console.log(back);
                 resolve(back);
             }).catch(error => reject(error));
         });
