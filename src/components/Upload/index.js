@@ -203,6 +203,7 @@ class Upload extends Component {
                 status.uploaded = true;
                 status.uploading = false;
                 this.interfaceRef.current.updateFormStatus(status);
+                this.firebaseWrapper.checkImages();
                 this.props.close();
             }
         });

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731f0787-94ac-4e75-af0b-4b3fcc1dda7c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config/geocode.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/geocode.xsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/geocode.xslt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gallery/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/firebase/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/firebase/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/customMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/customMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/.editorconfig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/react-firebase-file-uploader/.flowconfig" beforeDir="false" />
@@ -54,7 +56,7 @@
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.28" value="2" />
-          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.29" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.32" value="1" />
@@ -66,22 +68,22 @@
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JSON" value="2" />
           <entry key="css" value="12" />
-          <entry key="env" value="15" />
+          <entry key="env" value="18" />
           <entry key="firebaserc" value="1" />
-          <entry key="gitignore" value="4" />
+          <entry key="gitignore" value="5" />
           <entry key="html" value="5" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="283" />
-          <entry key="json" value="22" />
+          <entry key="js" value="290" />
+          <entry key="json" value="23" />
           <entry key="map" value="2" />
-          <entry key="md" value="5" />
+          <entry key="md" value="8" />
           <entry key="png" value="3" />
           <entry key="rules" value="1" />
           <entry key="ts" value="2" />
@@ -94,10 +96,10 @@
           <entry key="CSS" value="12" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="7" />
-          <entry key="JSON" value="24" />
-          <entry key="JavaScript" value="283" />
-          <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="JSON" value="25" />
+          <entry key="JavaScript" value="290" />
+          <entry key="Markdown" value="8" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="SourceMap" value="2" />
           <entry key="TypeScript" value="2" />
           <entry key="XML" value="6" />
@@ -107,12 +109,12 @@
         <counts>
           <entry key="JSON" value="1" />
           <entry key="css" value="520" />
-          <entry key="env" value="194" />
+          <entry key="env" value="215" />
           <entry key="gitignore" value="19" />
           <entry key="html" value="39" />
-          <entry key="js" value="40669" />
-          <entry key="json" value="15" />
-          <entry key="md" value="339" />
+          <entry key="js" value="42296" />
+          <entry key="json" value="16" />
+          <entry key="md" value="417" />
           <entry key="xslt" value="522" />
         </counts>
       </usages-collector>
@@ -120,10 +122,10 @@
         <counts>
           <entry key="CSS" value="520" />
           <entry key="HTML" value="39" />
-          <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="40669" />
-          <entry key="Markdown" value="339" />
-          <entry key="PLAIN_TEXT" value="213" />
+          <entry key="JSON" value="17" />
+          <entry key="JavaScript" value="42296" />
+          <entry key="Markdown" value="417" />
+          <entry key="PLAIN_TEXT" value="234" />
           <entry key="XML" value="522" />
         </counts>
       </usages-collector>
@@ -137,43 +139,48 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/RouterConfig.js">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/Routes.js">
+        <entry file="file://$PROJECT_DIR$/functions/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="154" column="38" lean-forward="true" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api/firebase/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="95" column="19" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="19" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Map/customMap.js">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TopBar/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+            <state>
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -182,10 +189,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Home/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="644">
+              <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -194,49 +201,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Gallery/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Map/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+            <state relative-caret-position="391">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/geocode.xml">
+        <entry file="file://$PROJECT_DIR$/src/components/Map/customMap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="27" lean-forward="true" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/geocode.xslt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="65" column="36" lean-forward="true" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="69" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="69" />
+            <state relative-caret-position="661">
+              <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -254,17 +237,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>i</find>
-      <find>evtNames</find>
-      <find>_propTypes2.default.func</find>
-      <find>func</find>
-      <find>loadMa</find>
-      <find>h2</find>
-      <find>click</find>
-      <find>imageClic</find>
-      <find>renderI</find>
-      <find>imagel</find>
-      <find>.src</find>
       <find>typog</find>
       <find>loadin</find>
       <find>href</find>
@@ -276,25 +248,33 @@
       <find>console.log</find>
       <find>console.</find>
       <find>console</find>
-      <find>index</find>
       <find>&quot;merge&quot;:</find>
       <find>url-parse</find>
       <find>merge&quot;: {</find>
       <find>merge&quot;:</find>
       <find>merge</find>
-      <find>img</find>
       <find>br</find>
+      <find>index</find>
+      <find>img</find>
+      <find>json</find>
+      <find>snapsh</find>
+      <find>update</find>
+      <find>uploadImage</find>
+      <find>Galleries</find>
+      <find>'Galleries'</find>
+      <find>checkImag</find>
+      <find>key</find>
+      <find>snapshot</find>
+      <find>sending</find>
+      <find>validate</find>
     </findStrings>
     <replaceStrings>
-      <replace>dragging</replace>
-      <replace>DrivePicker</replace>
       <replace>props</replace>
       <replace>Uploader</replace>
       <replace>galleryData</replace>
       <replace>.imageGrid</replace>
       <replace>&gt; li</replace>
       <replace>FIREBASE_REF</replace>
-      <replace>FIREBASE_DATABASE_REF</replace>
       <replace>TARGET_FILE</replace>
       <replace>DRIVE_FILE</replace>
       <replace>galleryKey</replace>
@@ -316,6 +296,9 @@
       <replace>Lightbox</replace>
       <replace>Map</replace>
       <replace>.url</replace>
+      <replace>process.env.FIREBASE_DATABASE_REF</replace>
+      <replace>FIREBASE_DATABASE_REF</replace>
+      <replace>this.databaseRef</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\web\react\react-firebase-gallery\node_modules</dir>
@@ -328,20 +311,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/functions/config/.env" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/functions/config/credentials.json" />
         <option value="$PROJECT_DIR$/src/components/Map/mapV2.js" />
         <option value="$PROJECT_DIR$/src/components/Map/views/InfoWindow.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/functions/package.json" />
         <option value="$PROJECT_DIR$/functions/.env" />
         <option value="$PROJECT_DIR$/functions/driveTest.js" />
-        <option value="$PROJECT_DIR$/functions/index.js" />
         <option value="$PROJECT_DIR$/functions/imageCompression.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/drivePicker.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/imageGrid.js" />
-        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
         <option value="$PROJECT_DIR$/src/components/index.js" />
         <option value="$PROJECT_DIR$/src/components/Map/views/mapV2.js" />
         <option value="$PROJECT_DIR$/src/components/machin.JSON" />
@@ -358,9 +336,7 @@
         <option value="$PROJECT_DIR$/src/lib/google-maps-react/dist/GoogleApiComponent.js" />
         <option value="$PROJECT_DIR$/src/components/Map/views/imageViewer.js" />
         <option value="$PROJECT_DIR$/src/components/Shared/views/loading.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/components/Admin/index.js" />
-        <option value="$PROJECT_DIR$/src/api/firebase/index.js" />
         <option value="$PROJECT_DIR$/src/lib/image-resizer/index.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/galleryForm.js" />
         <option value="$PROJECT_DIR$/src/components/Upload/views/index.js" />
@@ -372,13 +348,20 @@
         <option value="$PROJECT_DIR$/src/config/RouterConfig.js" />
         <option value="$PROJECT_DIR$/src/config/Routes.js" />
         <option value="$PROJECT_DIR$/src/components/Home/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Map/customMap.js" />
         <option value="$PROJECT_DIR$/src/components/TopBar/index.js" />
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/src/components/Gallery/index.js" />
         <option value="$PROJECT_DIR$/src/api/google-geocode/index.js" />
         <option value="$PROJECT_DIR$/src/config/geocode.xml" />
         <option value="$PROJECT_DIR$/src/config/geocode.xslt" />
+        <option value="$PROJECT_DIR$/functions/README.md" />
+        <option value="$PROJECT_DIR$/functions/package.json" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/functions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Upload/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Map/customMap.js" />
+        <option value="$PROJECT_DIR$/src/api/firebase/index.js" />
       </list>
     </option>
   </component>
@@ -401,7 +384,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -411,7 +394,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -440,7 +422,34 @@
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="firebase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="google-geocode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Upload" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
@@ -448,10 +457,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,11 +490,11 @@
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Shared" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\functions" />
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\config" />
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib" />
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components" />
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\functions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -543,15 +559,17 @@
       <workItem from="1541040760040" duration="9061000" />
       <workItem from="1541062655373" duration="1956000" />
       <workItem from="1541508097980" duration="16053000" />
-      <workItem from="1541580790971" duration="26086000" />
+      <workItem from="1541580790971" duration="26677000" />
+      <workItem from="1541657030298" duration="7067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355077000" />
+    <option name="totallyTimeSpent" value="362735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10590095" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -578,54 +596,30 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lib/google-map-react/develop/Main.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/src/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/examples/components/withMarkers.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/src/components/InfoWindow.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/index.js" />
     <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/src/lib/windowOrGlobal.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/static/js/main.3a3977ea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret column="1206422" selection-start-column="1206422" selection-end-column="1206422" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/.env" />
+    <entry file="file://$PROJECT_DIR$/build/static/js/main.3a3977ea.js" />
+    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/webpack.config.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/google-maps-react/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/GoogleApiComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/GoogleApiComponent.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/google-maps-react/dist/GoogleApiComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -637,9 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,61 +645,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-photo-gallery/examples/src/ExampleWithLightbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-photo-gallery/examples/src/ExampleDynamicLoading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/google-maps-react/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="243" column="17" selection-start-line="243" selection-start-column="12" selection-end-line="243" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="520">
-            <caret line="67" column="3" lean-forward="true" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/firebase/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -723,9 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,22 +704,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Upload/drivePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Shared/loading.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -785,23 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Map/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Gallery/imageViewer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,9 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -819,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,46 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/firebase.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/Routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Map/customMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopBar/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,34 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Gallery/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="69" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/RouterConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/geocode.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="27" lean-forward="true" selection-end-line="55" />
         </state>
       </provider>
     </entry>
@@ -927,6 +776,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TopBar/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Gallery/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/geocode.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="27" lean-forward="true" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/geocode.xslt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -934,10 +818,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="272">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="211">
+            <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/firebase.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="154" column="38" lean-forward="true" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Upload/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Map/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Map/customMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/firebase/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="95" column="19" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -118,10 +118,11 @@ export class CustomMap extends Component {
                                                     marginTop: 10
                                                 }}
                                                 color={"primary"}>{this.getSelectedGallery().name}</Typography>
+
+                                    <div style={{marginBottom: 10}}>
+                                        {this.renderImages()}
+                                    </div>
                                 </a>
-                                <div style={{marginBottom: 10}}>
-                                    {this.renderImages()}
-                                </div>
                             </Fragment>
                             }
                         </div>

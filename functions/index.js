@@ -123,6 +123,32 @@ function extractUrl(val) {
     ));
 }
 
+function exportImage(snapshot, context) {
+    const galleryId = context.params.galleryId;
+    const imageId = context.params.imageId;
+
+    console.log("VALUE: ", snapshot);
+    return (new Promise((resolve, reject) => {
+        extractUrl(snapshot).then(imageUrl => {
+            compressor(imageUrl).then((imageUrl) => {
+                uploadToCloudinary(imageUrl).then(result => {
+                    saveToFirebase(galleryId, imageId, {
+                        url: result.eager[0].url,
+                        lightbox: result.eager[1].url,
+                        thumbnail: result.eager[2].url
+                    }).then(result => {
+                        resolve(result);
+                    }).catch(error => {
+                        reject(error);
+                    });
+                }).catch(error => {
+                    reject(error);
+                });
+            });
+        });
+    }));
+}
+
 /**
  * Event triggered when a new image is saved in the database
  * (not when it is uploaded ! when its reference is saves on a gallery)
@@ -130,27 +156,12 @@ function extractUrl(val) {
  */
 exports.onFileUpload = functions.database.ref('/Galleries/{galleryId}/images/{imageId}')
     .onCreate((snapshot, context) => {
-        const galleryId = context.params.galleryId;
-        const imageId = context.params.imageId;
+        console.log("Parsing a new image");
+        return (exportImage(snapshot.val(), context));
+    });
 
-        console.log("VALUE: ", snapshot.val());
-        return (new Promise((resolve, reject) => {
-            extractUrl(snapshot.val()).then(imageUrl => {
-                compressor(imageUrl).then((imageUrl) => {
-                    uploadToCloudinary(imageUrl).then(result => {
-                        saveToFirebase(galleryId, imageId, {
-                            url: result.eager[0].url,
-                            lightbox: result.eager[1].url,
-                            thumbnail: result.eager[2].url
-                        }).then(result => {
-                            resolve(result);
-                        }).catch(error => {
-                            reject(error);
-                        });
-                    }).catch(error => {
-                        reject(error);
-                    });
-                });
-            });
-        }));
+exports.onErrorUpload = functions.database.ref('/Galleries/{galleryId}/images/{imageId}')
+    .onUpdate((snapshot, context) => {
+        console.log("Reparsing image");
+        return (exportImage(snapshot.after.val(), context));
     });
