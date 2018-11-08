@@ -70,7 +70,7 @@ export default class Gallery extends React.Component {
                     <Typography variant={"h2"} color={"primary"} style={styles.title}>
                         {this.state.gallery.name}
                     </Typography>
-                    <div>
+                    <div style={{textAlign: 'center'}}>
                         {Object.keys(this.state.gallery.images).map((item, i) => (
                             <img key={i} alt={item} onClick={() => this.onImageClick(i)}
                                  src={this.state.gallery.images[item].lightbox}

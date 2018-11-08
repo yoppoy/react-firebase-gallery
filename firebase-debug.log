@@ -1,0 +1,129 @@
+[debug] [2018-11-07T16:33:37.692Z] ----------------------------------------------------------------------
+[debug] [2018-11-07T16:33:37.706Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Yan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-11-07T16:33:37.707Z] CLI Version:   5.0.1
+[debug] [2018-11-07T16:33:37.707Z] Platform:      win32
+[debug] [2018-11-07T16:33:37.707Z] Node Version:  v8.11.4
+[debug] [2018-11-07T16:33:37.708Z] Time:          Thu Nov 08 2018 00:33:37 GMT+0800 (China Standard Time)
+[debug] [2018-11-07T16:33:37.708Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-07T16:33:37.788Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-07T16:33:37.789Z] > authorizing via signed-in user
+[debug] [2018-11-07T16:33:37.790Z] [iam] checking project anonygrapher-53ceb for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2018-11-07T16:33:37.792Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/anonygrapher-53ceb:testIamPermissions  
+
+[debug] [2018-11-07T16:33:50.011Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:33:50.012Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/anonygrapher-53ceb  
+ 
+[debug] [2018-11-07T16:33:51.645Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'anonygrapher-53ceb'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-11-07T16:34:07.948Z] >>> HTTP REQUEST PUT https://anonygrapher-53ceb.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+[debug] [2018-11-07T16:34:15.227Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database anonygrapher-53ceb is valid
+[debug] [2018-11-07T16:34:15.231Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^2.1.0",
+    "axios": "^0.18.0",
+    "child-process-promise": "^2.2.1",
+    "cloudinary": "^1.11.0",
+    "dotenv": "^6.1.0",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.3",
+    "fs": "0.0.1-security",
+    "googleapis": "^27.0.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "readline": "^1.3.0",
+    "sharp": "^0.21.0",
+    "uuid": "^3.3.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-11-07T16:34:15.232Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-07T16:34:15.232Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-07T16:34:15.234Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-07T16:34:15.234Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-07T16:34:16.414Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:16.434Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/anonygrapher-53ceb?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-07T16:34:18.657Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:18.676Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/anonygrapher-53ceb?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-07T16:34:18.916Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:22.144Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-11-07T16:34:22.145Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/anonygrapher-53ceb  
+ 
+[debug] [2018-11-07T16:34:24.165Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:24.165Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/50669534219:getServerAppConfig  
+ 
+[debug] [2018-11-07T16:34:25.470Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:25.471Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/anonygrapher-53ceb/versions  
+
+[debug] [2018-11-07T16:34:28.607Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-11-07T16:34:28.610Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/anonygrapher-53ceb/configs  
+ 
+[debug] [2018-11-07T16:34:30.309Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (52.94 KB) for uploading
+[debug] [2018-11-07T16:34:41.015Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/anonygrapher-53ceb/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-11-07T16:34:43.394Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:43.394Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-ac637733-83ec-4af9-836d-7d6856cfb119/5c45957a-65fd-4306-85e3-3f6ba83f9f89.zip?GoogleAccessId=service-50669534219@gcf-admin-robot.iam.gserviceaccount.com&Expires=1541610281&Signature=Uuma413JoM0VMW9VuNtoMmGVpF8wLv2pJSZ0g6F69PsxNBFdkudaWxasbW13k08agNEwGx0JN339AxUc9bybs7lJ12e7izX0%2Fb4J3VoAAgUojSI8eeOKXptMd2xYa2k6%2FfaqaGWm2fzL2rZTcCr%2BB%2BcEPf4xhTH5tdMwR164wNf226gMGloHegCkxUgn2kHxFqtwCT1fRxcWBZvKhHShMB6Ptq%2B2%2FXhFl7yZ%2B%2FXcQk%2FOzkZ3OzyIuBZeJed7CbU7omiOvq3ylT96SJ%2BhZN8TQ%2Bim5RbynHPcMOFmc2QygjSBbEwo64CfBbcsHJq5Zq4z1XcFJvzIVwWBARoSOLD45w%3D%3D  
+
+[debug] [2018-11-07T16:34:46.305Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[anonygrapher-53ceb]: beginning deploy...
+[info] i  hosting[anonygrapher-53ceb]: found 11 files in build
+[debug] [2018-11-07T16:34:47.637Z] [hosting] hash cache [YnVpbGQ] stored for 11 files
+[debug] [2018-11-07T16:34:47.638Z] [hosting][hash queue][FINAL]
+[debug] [2018-11-07T16:34:47.638Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/anonygrapher-53ceb/versions/a8119004cb659a0c:populateFiles  
+ <request body omitted>
+[debug] [2018-11-07T16:34:48.792Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:34:48.796Z] [hosting][populate queue][FINAL]
+[debug] [2018-11-07T16:34:48.796Z] [hosting] uploads queued: 7
+[debug] [2018-11-07T16:35:47.707Z] [hosting][upload queue][FINAL]
+[info] +  hosting[anonygrapher-53ceb]: file upload complete
+[debug] [2018-11-07T16:35:47.709Z] [hosting] deploy completed after 61402ms
+[info] i  database: releasing rules...
+[debug] [2018-11-07T16:35:47.711Z] >>> HTTP REQUEST PUT https://anonygrapher-53ceb.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+[debug] [2018-11-07T16:35:48.572Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database anonygrapher-53ceb released successfully
+[debug] [2018-11-07T16:35:48.574Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/anonygrapher-53ceb/locations/-/functions  
+ 
+[debug] [2018-11-07T16:36:12.919Z] [functions] failed to list functions for anonygrapher-53ceb
+[debug] [2018-11-07T16:36:12.920Z] [functions] Server Error. socket hang up
+[debug] [2018-11-07T16:36:12.922Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
