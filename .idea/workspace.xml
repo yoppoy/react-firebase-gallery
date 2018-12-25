@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="731f0787-94ac-4e75-af0b-4b3fcc1dda7c" name="Default" comment="fix (vcs)">
-      <change beforePath="$PROJECT_DIR$/src/api/google-geocode/__tests__/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/google-geocode/__tests__/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/google-geocode/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/google-geocode/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
-    </list>
+    <list default="true" id="731f0787-94ac-4e75-af0b-4b3fcc1dda7c" name="Default" comment="add (test for geocode)" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -121,28 +117,30 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
+          <entry key="dist" value="1" />
+          <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="18" />
-          <entry key="json" value="2" />
+          <entry key="js" value="20" />
+          <entry key="json" value="3" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="18" />
+          <entry key="JSON" value="3" />
+          <entry key="JavaScript" value="20" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="6" />
-          <entry key="gitignore" value="6" />
+          <entry key="gitignore" value="7" />
           <entry key="js" value="1988" />
           <entry key="md" value="2" />
-          <entry key="txt" value="50" />
+          <entry key="txt" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -150,7 +148,7 @@
           <entry key="CSS" value="6" />
           <entry key="JavaScript" value="1988" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="56" />
+          <entry key="PLAIN_TEXT" value="81" />
         </counts>
       </usages-collector>
     </session>
@@ -161,49 +159,25 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/.env.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/setupTests.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/api/google-geocode/__tests__/index.test.js">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="112">
+              <caret line="7" lean-forward="true" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -221,7 +195,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
       <find>uploadImage</find>
       <find>Galleries</find>
       <find>'Galleries'</find>
@@ -250,6 +223,7 @@
       <find>geocodeWr</find>
       <find>geocodeWrapper</find>
       <find>set</find>
+      <find>.gitsub</find>
       <find>window</find>
     </findStrings>
     <replaceStrings>
@@ -287,6 +261,7 @@
     <dirStrings>
       <dir>C:\web\react\react-firebase-gallery\node_modules</dir>
       <dir>C:\Users\Yan\web\reactjs\react-firebase-gallery\src</dir>
+      <dir>C:\Users\Yan\web\reactJs\react-firebase-gallery\src\lib\react-firebase-file-uploader</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -295,7 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/index.js" />
         <option value="$PROJECT_DIR$/src/components/Map/views/mapV2.js" />
         <option value="$PROJECT_DIR$/src/components/machin.JSON" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -334,7 +308,6 @@
         <option value="$PROJECT_DIR$/src/components/TopBar/index.js" />
         <option value="$PROJECT_DIR$/src/components/Admin/dashboard.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Test/firebase.js" />
         <option value="$PROJECT_DIR$/src/config/firebase.js" />
         <option value="$PROJECT_DIR$/src/api/test/firebase.test.js" />
@@ -346,6 +319,8 @@
         <option value="$PROJECT_DIR$/src/setupTests.js" />
         <option value="$PROJECT_DIR$/src/api/google-geocode/index.js" />
         <option value="$PROJECT_DIR$/src/api/google-geocode/__tests__/index.test.js" />
+        <option value="$PROJECT_DIR$/.env.dist" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -367,8 +342,8 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -384,35 +359,6 @@
             <path>
               <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-firebase-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-firebase-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="react-firebase-file-uploader" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -434,19 +380,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\components\Upload" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\functions" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\config" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\lib" />
-      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\api\google-geocode" />
       <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src" />
       <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\api" />
       <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\api\firebase" />
       <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\components\Map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\lib" />
+      <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\build" />
+      <recent name="C:\Users\Yan\web\reactJs\react-firebase-gallery\src\components\Upload" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\functions" />
+      <recent name="C:\Users\Yan\web\reactjs\react-firebase-gallery\src\config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -595,7 +541,7 @@
       <workItem from="1541772515891" duration="606000" />
       <workItem from="1542027210637" duration="762000" />
       <workItem from="1545725422560" duration="8676000" />
-      <workItem from="1545745060544" duration="3058000" />
+      <workItem from="1545745060544" duration="4391000" />
     </task>
     <task id="LOCAL-00001" summary="add (dashboard)">
       <created>1545728505882</created>
@@ -632,13 +578,17 @@
       <option name="project" value="LOCAL" />
       <updated>1545745717622</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add (test for geocode)">
+      <created>1545748165624</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545748165624</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="getCoord() - 2018.12.25 at 22h 15m 49s.xml">
-      <configuration name="getCoord()" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="getCoord() - 2018.12.25 at 22h 16m 07s.xml">
       <configuration name="getCoord()" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -666,27 +616,30 @@
     <history-entry file="getCoord() - 2018.12.25 at 22h 20m 18s.xml">
       <configuration name="getCoord()" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="getCoord() - 2018.12.25 at 22h 34m 13s.xml">
+      <configuration name="getCoord()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377177000" />
+    <option name="totallyTimeSpent" value="378510000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14172813" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28739315" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3270925" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3006608" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30367073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32929516" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.18502203" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18464962" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -715,20 +668,15 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/lib/google-map-react" />
       <path value="$PROJECT_DIR$/src/lib/google-maps-react" />
-      <path value="$PROJECT_DIR$/src/lib/react-firebase-file-uploader" />
     </ignored-roots>
     <MESSAGE value="add (dashboard)" />
     <MESSAGE value="fix (gitignore)" />
     <MESSAGE value="add (test)" />
     <MESSAGE value="fix (vcs)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix (vcs)" />
+    <MESSAGE value="add (test for geocode)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add (test for geocode)" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/google-maps-react/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/lib/google-maps-react/dist/GoogleApiComponent.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/google-maps-react/dist/GoogleApiComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -823,13 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="3792" column="14" selection-start-line="3792" selection-start-column="14" selection-end-line="3792" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -961,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jest-jasmine2/build/queueRunner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -1014,27 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/setupTests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1045,6 +958,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/react-firebase-file-uploader/utils/image.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/react-firebase-file-uploader/utils/image.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14817">
+          <caret line="3792" column="14" selection-start-line="3792" selection-start-column="14" selection-end-line="3792" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/google-geocode/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/google-geocode/__tests__/index.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1052,6 +992,27 @@
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-end-line="7" />
         </state>
       </provider>
     </entry>
