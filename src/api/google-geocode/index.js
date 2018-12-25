@@ -5,8 +5,12 @@ export default (address) => {
         if (address) {
             fetch(API_URL + "&address=" + address).then(response => response.text())
                 .then(str => {
-                    let parser = new DOMParser();
-                    return (parser.parseFromString(str, "text/xml"));
+                    try {
+                        let parser = new DOMParser();
+                        return (parser.parseFromString(str, "text/xml"));
+                    } catch (e) {
+                        return ("Parsing error");
+                    }
                 })
                 .then(data => {
                     let result = {
