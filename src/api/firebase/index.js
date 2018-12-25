@@ -1,5 +1,5 @@
-import {firebaseApp, FIREBASE_DATABASE_REF, FIREBASE_UPLOAD_REF} from "../../config/firebase";
-import geocodeWrapper from '../google-geocode';
+import {firebaseApp, FIREBASE_DATABASE_REF} from "../../config/firebase";
+import getCoord from '../google-geocode';
 
 class firebaseWrapper {
     constructor() {
@@ -33,7 +33,7 @@ class firebaseWrapper {
 
     saveGalleryToDatabase(formData) {
         return new Promise((resolve, reject) => {
-            geocodeWrapper.getCoord(formData.location).then((result) => {
+            getCoord(formData.location).then((result) => {
                 resolve(this.databaseRef.push({
                     name: formData.name,
                     location: result,

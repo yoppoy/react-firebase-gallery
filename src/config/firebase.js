@@ -20,6 +20,5 @@ const FIREBASE_DATABASE_REF = "Galleries";
 const FIREBASE_UPLOAD_REF = "Galleries";
 
 const firebaseApp = firebase.initializeApp(FirebaseConfig);
-
 export {firebaseApp, FIREBASE_DATABASE_REF, FIREBASE_UPLOAD_REF};
 export default firebaseApp;
