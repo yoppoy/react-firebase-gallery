@@ -1,4 +1,5 @@
 import getCoord from '../index.js'
+import "isomorphic-fetch"
 
 describe('getCoord()', () => {
     it('Returns the right coordinates for London', () => {

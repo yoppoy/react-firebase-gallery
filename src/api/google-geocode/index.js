@@ -4,7 +4,10 @@ export default (address) => {
     return new Promise((resolve, reject) => {
         if (address) {
             fetch(API_URL + "&address=" + address).then(response => response.text())
-                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+                .then(str => {
+                    let parser = new DOMParser();
+                    return (parser.parseFromString(str, "text/xml"));
+                })
                 .then(data => {
                     let result = {
                         lat: parseFloat(data.getElementsByTagName("location")[0].getElementsByTagName("lat")[0].childNodes[0].data),
