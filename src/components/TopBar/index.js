@@ -56,7 +56,7 @@ class TopBar extends React.PureComponent {
     render() {
         const {classes} = this.props;
         return (
-            <div className={classes.root + ' noGrow'}>
+            <div className={classes.root + ' noGrow'} style={{zIndex: 5}}>
                 <AppBar position="static">
                     <Toolbar>
                         <Link to="/">

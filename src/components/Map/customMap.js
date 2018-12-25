@@ -46,7 +46,7 @@ export class CustomMap extends Component {
             for (let key in galleries) {
                 galleries[key].buffer = [];
                 galleries[key].imageViewerImages = [];
-                if (galleries[key].images) {
+                if (galleries[key] && galleries[key].hasOwnProperty('images') && galleries[key].images) {
                     Object.keys(galleries[key].images).map((item, i) => {
                         galleries[key].buffer.push(this.loadImage(galleries[key].images[item].thumbnail));
                         galleries[key].imageViewerImages.push({src: galleries[key].images[item].url});
@@ -68,6 +68,8 @@ export class CustomMap extends Component {
 
     renderImages() {
         const selected = this.getSelectedGallery();
+        if (!selected.images)
+            return (<div><p>Images failed to be uploaded</p></div>);
         return (<div>
             {Object.keys(selected.images).map((item, i) => (
                 <img key={i} alt={item}
