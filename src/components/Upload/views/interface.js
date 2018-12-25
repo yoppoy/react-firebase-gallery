@@ -177,7 +177,8 @@ class UploadInterface extends React.Component {
                                 <AddIcon/>
                             </Button>
                         </Zoom>
-                        <div className={`${classes.dropzoneContainer} + ${classes.fillBackground} + ${classes.flexCenter}`}>
+                        <div
+                            className={`${classes.dropzoneContainer} + ${classes.fillBackground} + ${classes.flexCenter}`}>
                             <Fade in={!this.state.dragging}>
                                 <Grid item className={classes.center}>
                                     <CloudUploadIcon className={classes.backgroundIcon}/>
@@ -190,12 +191,14 @@ class UploadInterface extends React.Component {
                                         <Button onClick={() => document.getElementById('uploadLabel').click()}
                                                 className={classes.uploadButton}>
                                             <AddAPhotoIcon className={classes.icon}/>
-                                            Choose photos</Button>
+                                            Choose photos
+                                        </Button>
                                         <DrivePicker addDriveFiles={props.functions.addDriveFiles}
-                                                     button={<Button color={"primary"} className={classes.clickable}>
-                                                         <FontAwesomeIcon icon={faGoogleDrive}
-                                                                          className={`${classes.icon} + ${classes.driveIcon}`}/>
-                                                         Choose from drive </Button>}/>
+                                                     button={<Button color={"primary"}
+                                                                     className={classes.clickable}><FontAwesomeIcon
+                                                         icon={faGoogleDrive}
+                                                         className={`${classes.icon} + ${classes.driveIcon}`}/>Choose
+                                                         from drive </Button>}/>
                                     </div>}
                                 </Grid>
                             </Fade>

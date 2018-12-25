@@ -10,6 +10,7 @@ import Collapse from '@material-ui/core/Collapse';
 import CollectionIcon from '@material-ui/icons/Collections';
 import ImageIcon from '@material-ui/icons/Image';
 import ErrorIcon from '@material-ui/icons/Error';
+import Avatar from '@material-ui/core/Avatar';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -76,7 +77,11 @@ class AdminDashboard extends React.Component {
                         <React.Fragment key={i}>
                             <ListItem button onClick={() => this.handleClick(i)}>
                                 <ListItemIcon>
-                                    <CollectionIcon/>
+                                    <a href={"/galleries/" + gallery.key}>
+                                    <Avatar>
+                                        <CollectionIcon/>
+                                    </Avatar>
+                                    </a>
                                 </ListItemIcon>
                                 <ListItemText inset primary={gallery.name}/>
                                 {this.state.open === i ? <ExpandLess/> : <ExpandMore/>}
