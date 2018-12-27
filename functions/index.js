@@ -1,13 +1,9 @@
 require('dotenv').config();
 
 const functions = require("firebase-functions");
-const gcs = require('@google-cloud/storage');
-const os = require('os');
-const path = require('path');
 const cloudinary = require('cloudinary');
 const admin = require('firebase-admin');
 const compressor = require('./imageCompression');
-const spawn = require('child-process-promise').spawn;
 
 /*
  * Initialising web services
@@ -127,7 +123,6 @@ function exportImage(snapshot, context) {
     const galleryId = context.params.galleryId;
     const imageId = context.params.imageId;
 
-    console.log("VALUE: ", snapshot);
     return (new Promise((resolve, reject) => {
         extractUrl(snapshot).then(imageUrl => {
             compressor(imageUrl).then((imageUrl) => {
